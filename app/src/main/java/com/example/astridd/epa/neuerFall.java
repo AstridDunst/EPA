@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -48,6 +49,19 @@ public class neuerFall extends AppCompatActivity {
     private int id_number;
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
+    private EditText tbVorname;
+    private EditText tbNachname;
+
+    private View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener() {
+
+        @Override
+        public void onFocusChange(View v, boolean hasFocus) {
+            Toast.makeText(getApplicationContext(), "Something happend", Toast.LENGTH_SHORT).show();
+            if(!hasFocus){
+                Toast.makeText(getApplicationContext(), "Focus lost", Toast.LENGTH_SHORT).show();
+            }
+        }
+    };
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -79,9 +93,46 @@ public class neuerFall extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+         //Initialise Components
+
+
         getElements();
         firstrun();
+
     }
+
+
+
+
+
+
+
+
+
+    private void findElements(){
+        //TODO: Initialise Compoments
+        tbVorname = (EditText) findViewById(R.id.etVorname);
+        tbNachname = (EditText) findViewById(R.id.edNachname);
+
+    }
+    private void setAllListeners(){
+        View.OnFocusChangeListener fcl= focusChangeListener;/*new View.OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                Toast.makeText(getApplicationContext(), "Something happend", Toast.LENGTH_SHORT).show();
+                if(!hasFocus){
+                    Toast.makeText(getApplicationContext(), "Focus lost", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };*/
+        //TODO: Set all Listeners
+        //tbVorname.setOnFocusChangeListener(fcl);
+        //tbNachname.setOnFocusChangeListener(fcl);
+        tbVorname.setText("T");
+
+    }
+
     private void firstrun(){
         if (availableInternet()){
             this.setTitle("EPA");
@@ -269,9 +320,10 @@ public class neuerFall extends AppCompatActivity {
                     View rootView = inflater.inflate(R.layout.fragment_fmassnahme3,container,false);
                     return rootView;
                 }else {
-                    View rootView = inflater.inflate(R.layout.fragment_neuer_fall, container, false);
+                    View rootView = inflater.inflate(R.layout.fragment_stammdaten, container, false);
                     return rootView;
                 }
+
             //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             //return rootView;
@@ -313,5 +365,6 @@ public class neuerFall extends AppCompatActivity {
             }
             return null;
         }
+
     }
 }
