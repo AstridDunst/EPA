@@ -348,9 +348,12 @@ public class neuerFall extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-
+            if (position == 0){
                 return PlaceholderFragment.newInstance(position + 1);
 
+            }else{
+                return frm_stammdaten.newInstance("Param1","Param2");
+            }
 
         }
 
