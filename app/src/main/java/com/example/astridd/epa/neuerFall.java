@@ -319,7 +319,6 @@ public class neuerFall extends AppCompatActivity {
                     return rootView;
                 }else if (getArguments().getInt(ARG_SECTION_NUMBER)==3){
                     View rootView = inflater.inflate(R.layout.fragment_fmassnahme3,container,false);
-
                     return rootView;
                 }else {
                     View rootView = inflater.inflate(R.layout.fragment_stammdaten, container, false);
