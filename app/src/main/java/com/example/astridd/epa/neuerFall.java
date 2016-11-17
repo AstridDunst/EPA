@@ -315,12 +315,17 @@ public class neuerFall extends AppCompatActivity {
                                  Bundle savedInstanceState) {
                 if (getArguments().getInt(ARG_SECTION_NUMBER)==2){
                     View rootView = inflater.inflate(R.layout.fragment_fallgemein2,container,false);
+
                     return rootView;
                 }else if (getArguments().getInt(ARG_SECTION_NUMBER)==3){
                     View rootView = inflater.inflate(R.layout.fragment_fmassnahme3,container,false);
+
                     return rootView;
                 }else {
                     View rootView = inflater.inflate(R.layout.fragment_stammdaten, container, false);
+                    //tbVorname = (EditText)rootView.findViewById(R.id.etVorname);
+                    //tbVorname.setText("Blablabla");
+
                     return rootView;
                 }
 
@@ -344,7 +349,17 @@ public class neuerFall extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            if (position == 0) {
+                Toast.makeText(getApplicationContext(), "Im 0er", Toast.LENGTH_SHORT).show();
+                return PlaceholderFragment.newInstance(position + 1);
+            } else if (position == 1) {
+                Toast.makeText(getApplicationContext(), "Im einser", Toast.LENGTH_SHORT).show();
+                return frm_stammdaten.newInstance("new", "dfgdfg");
+            } else {
+                Toast.makeText(getApplicationContext(), "Im else", Toast.LENGTH_SHORT).show();
+                return PlaceholderFragment.newInstance(position + 1);
+            }
+
         }
 
         @Override

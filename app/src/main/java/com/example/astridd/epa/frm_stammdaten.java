@@ -86,6 +86,8 @@ public class frm_stammdaten extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_stammdaten, container, false);
+        tbVorname = (EditText)view.findViewById(R.id.etVorname);
+        tbVorname.setText("Blablabla");
         //getElements(view);
         return view;
 
