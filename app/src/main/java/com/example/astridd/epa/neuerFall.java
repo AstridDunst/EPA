@@ -314,7 +314,7 @@ public class neuerFall extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
                 if (getArguments().getInt(ARG_SECTION_NUMBER)==2){
-                    View rootView = inflater.inflate(R.layout.fragment_fallgemein2,container,false);
+                    View rootView = inflater.inflate(R.layout.fragment_frm_vitaldaten,container,false);
 
                     return rootView;
                 }else if (getArguments().getInt(ARG_SECTION_NUMBER)==3){
@@ -351,8 +351,14 @@ public class neuerFall extends AppCompatActivity {
             if (position == 0){
                 return PlaceholderFragment.newInstance(position + 1);
 
-            }else{
+            }else if (position == 1){
                 return frm_stammdaten.newInstance("Param1","Param2");
+            } else if (position == 2){
+                return frm_vitaldaten.newInstance("Param1","Param2");
+            }else if (position == 3){
+                return fmassnahme3.newInstance("Param1","Param2");
+            } else {
+                return PlaceholderFragment.newInstance(position + 1);
             }
 
         }
