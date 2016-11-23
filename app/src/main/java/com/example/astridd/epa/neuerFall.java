@@ -45,6 +45,7 @@ public class neuerFall extends AppCompatActivity {
     private SharedPreferences speicher;
     private SharedPreferences.Editor editor;
     final String scriptURLString = "http://epa.htl5.org/phpscripts/receive_skript.php";
+    //final String scriptupdate = "http://epa.htl5.org/phpscripts/update_script.php";
     final String abscriptURLString = "http://epa.htl5.org/phpscripts/logout_skript.php";
     private int id_number;
     private SectionsPagerAdapter mSectionsPagerAdapter;
@@ -232,8 +233,62 @@ public class neuerFall extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    public void updateDataset(final String fieldname, final String content){
+        //Toast.makeText(getActivity(), patientennummer, Toast.LENGTH_SHORT).show();
+        /*new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+
+                    //Looper.prepare();
+                    //Toast.makeText(getActivity(), patientennummer, Toast.LENGTH_SHORT).show();
+                    String s = fieldname;
+                    String st = content;
+                    //String textparam = "text1=" + URLEncoder.encode(s,"UTF-8");
+                    String textparam = "dbfeld=" + URLEncoder.encode(s,"UTF-8")+ "&content="+URLEncoder.encode(st, "UTF-8")+"&nummer="+URLEncoder.encode(String.valueOf(id_number), "UTF-8");
+                    URL scripturl = new URL(scriptupdate);
+                    HttpURLConnection connection = (HttpURLConnection)scripturl.openConnection();
+                    connection.setDoOutput(true);
+                    connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                    connection.setFixedLengthStreamingMode(textparam.getBytes().length);
+
+                    OutputStreamWriter contentWriter = new OutputStreamWriter(connection.getOutputStream());
+                    contentWriter.write(textparam);
+                    contentWriter.flush();
+                    contentWriter.close();
+
+                    InputStream answerInputSteam = connection.getInputStream();
+                    final String answer = getInputStream(answerInputSteam);
+                    //Was an die Benutzeroberfläche zurückkommt
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (!answer.equals("0")) {
+                                id_number = Integer.valueOf(answer);
+                                Toast.makeText(getApplicationContext(), answer, Toast.LENGTH_SHORT).show();
+                                //tv.setText(answer);
+                            }else {
+                                Toast.makeText(getApplicationContext(), "Probleme mit der Datenbank.", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                    answerInputSteam.close();
+                    connection.disconnect();
+
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            //Looper.loop();
+        }).start();
+        */
+
+    }
+
     public void vomServerabmelden(){
-        new Thread(new Runnable() {
+         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -257,7 +312,7 @@ public class neuerFall extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-
+                            Toast.makeText(getApplicationContext(), answer, Toast.LENGTH_SHORT).show();
                             if (answer.equals("true")) {
                                 //id_number = Integer.valueOf(answer);
                                 tre();
@@ -277,9 +332,10 @@ public class neuerFall extends AppCompatActivity {
                 }
             }
         }).start();
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, MainActivity.class);
+        //startActivity(intent);
     }
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -315,10 +371,11 @@ public class neuerFall extends AppCompatActivity {
                                  Bundle savedInstanceState) {
                 if (getArguments().getInt(ARG_SECTION_NUMBER)==2){
                     View rootView = inflater.inflate(R.layout.fragment_frm_vitaldaten,container,false);
-
+                    //View rootView = frm_stammdaten.;
                     return rootView;
                 }else if (getArguments().getInt(ARG_SECTION_NUMBER)==3){
                     View rootView = inflater.inflate(R.layout.fragment_fmassnahme3,container,false);
+
                     return rootView;
                 }else {
                     View rootView = inflater.inflate(R.layout.fragment_stammdaten, container, false);
@@ -348,20 +405,25 @@ public class neuerFall extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            if (position == 0){
-                return PlaceholderFragment.newInstance(position + 1);
-
-            }else if (position == 1){
-                return frm_stammdaten.newInstance("Param1","Param2");
-            } else if (position == 2){
+            //return PlaceholderFragment.newInstance(position + 1);
+            //
+            // Toast.makeText(getApplicationContext(), "Position Nummer: "+position, Toast.LENGTH_SHORT).show();
+            if (position == 0) {
+                //System.out.println("Position: 0");
+                return frm_stammdaten.newInstance(String.valueOf(id_number), "Param2");
+            } else if (position == 1) {
+                //System.out.println("Position: 1");
                 return frm_vitaldaten.newInstance("Param1","Param2");
-            }else if (position == 3){
+            } else if (position == 2){
+                //(System.out.println("Position: 2");
                 return fmassnahme3.newInstance("Param1","Param2");
             } else {
-                return PlaceholderFragment.newInstance(position + 1);
+                //System.out.println("Position: "+ position);
+                return frm_stammdaten.newInstance("Param1", "Param2");
             }
 
         }
+
 
         @Override
         public int getCount() {
@@ -380,7 +442,9 @@ public class neuerFall extends AppCompatActivity {
                     return "Maßnahmen";
             }
             return null;
+
         }
 
     }
+
 }

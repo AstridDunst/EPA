@@ -18,5 +18,12 @@
         android:id="@+id/textView7"
         android:layout_gravity="center" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/trol"
+        android:layout_gravity="center_horizontal|top"
+        android:width="300dp" />
+
 
 </FrameLayout>

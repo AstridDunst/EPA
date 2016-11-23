@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.Toast;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +23,9 @@ public class frm_stammdaten extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private  String patientennummer;
+    final String scriptURLString = "http://epa.htl5.org/phpscripts/update_script.php";
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -39,13 +40,62 @@ public class frm_stammdaten extends Fragment {
 
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
-            Toast.makeText(getActivity(), "Something happend", Toast.LENGTH_SHORT).show();
+
+
             if(!hasFocus){
-                Toast.makeText(getActivity(), "Focus lost", Toast.LENGTH_SHORT).show();
+                if (v.getId() == tbVorname.getId()) {
+                    //Erstes Feld Datenbankname
+                    //Zweites Feld Content
+                    updateDataset("f_vorname",String.valueOf(tbNachname.getText()));
+                }else if (v.getId()==tbNachname.getId()){
+                    updateDataset("f_zuname",String.valueOf(tbNachname.getText()));
+                }
             }
+
         }
     };
+    private void updateDataset(String fieldname, String content){
 
+        //neuerFall nf = new neuerFall();
+        //Toast.makeText(getActivity(), "bin da", Toast.LENGTH_SHORT).show();
+        //nf.updateDataset(Fieldname,Content);
+
+        //try
+        //{
+            /*String username = "epa";
+            String password = "epateam";
+            String url = "jdbc:mysql://epa.htl5.org:3306/dunst_epa?connectTimeout=3000";
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(url, username, password);*/
+
+
+            // create the java mysql update preparedstatement
+            //String query = "update users set num_points = ? where first_name = ?";
+            //String query = "UPDATE f_fall SET " + fieldname +  " = " + content+ " WHERE (f_id ="+ patientennummer+");";
+           // PreparedStatement preparedStmt = conn.prepareStatement(query);
+            //preparedStmt.setInt   (1, 6000);
+            //preparedStmt.setString(2, "Fred");
+            //Toast.makeText(getActivity(), query, Toast.LENGTH_SHORT).show();
+            // execute the java preparedstatement
+            //DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+          //  preparedStmt.executeUpdate();
+
+            //Connection con= DriverManager.getConnection(
+                    //"jdbc:mysql://localhost:3306/","root","root");
+
+            //Toast.makeText(getActivity(), (CharSequence) con.getMetaData(), Toast.LENGTH_SHORT).show();
+        //}
+        //catch (SQLException e)
+        //{
+            //Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+            //System.err.println("Got an exception! ");
+            //System.err.println(e.getMessage());
+        //}
+
+
+
+    }
 
 
     public frm_stammdaten() {
@@ -64,6 +114,7 @@ public class frm_stammdaten extends Fragment {
     public static frm_stammdaten newInstance(String param1, String param2) {
         frm_stammdaten fragment = new frm_stammdaten();
         Bundle args = new Bundle();
+
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
@@ -73,9 +124,9 @@ public class frm_stammdaten extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Toast.makeText(getActivity(), "Trololol", Toast.LENGTH_SHORT).show();
+
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
+            patientennummer = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
 
         }
@@ -86,12 +137,9 @@ public class frm_stammdaten extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View view = inflater.inflate(R.layout.fragment_stammdaten, container, false);
-        tbVorname = (EditText)view.findViewById(R.id.etVorname);
-        tbVorname.setText("Blablabla");
-        Toast.makeText(getActivity(), "Instanzierung", Toast.LENGTH_SHORT).show();
-        //getElements(view);
+        getElements(view);
+        setListeners();
         return view;
 
     }
@@ -99,6 +147,12 @@ public class frm_stammdaten extends Fragment {
         tbVorname = (EditText)view.findViewById(R.id.etVorname);
         tbNachname = (EditText)view.findViewById(R.id.edNachname);
     }
+    private void setListeners(){
+        tbVorname.setOnFocusChangeListener(focusChangeListener);
+        tbNachname.setOnFocusChangeListener(focusChangeListener);
+    }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
