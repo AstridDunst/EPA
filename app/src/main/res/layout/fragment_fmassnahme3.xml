@@ -32,7 +32,7 @@
                         android:text="Helmabnahme"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/b5"
+                        android:id="@+id/textView5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />

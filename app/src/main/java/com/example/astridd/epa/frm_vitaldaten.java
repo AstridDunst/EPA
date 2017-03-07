@@ -87,7 +87,6 @@ public class frm_vitaldaten extends Fragment {
         //Toast.makeText(getActivity(), "Code Teil 2", Toast.LENGTH_SHORT).show();
         return view;
     }
-
     private void getElements(View view) {
         //Step2:
         cbOrientiert = (CheckBox)view.findViewById(R.id.cbOrientiert);
