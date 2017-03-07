@@ -3,13 +3,11 @@ package com.example.astridd.epa;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.StringDef;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.EditText;
 
 
 /**
@@ -30,22 +28,24 @@ public class frm_vitaldaten extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private neuerFall mActivity;
+
     private CheckBox cbOrientiert;
 
     private OnFragmentInteractionListener mListener;
 
-    /*   private View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener(){
+       private View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener() {
 
-         @Override
-          public void onFocusChange(View v, boolean hasFocus) {
-              if (!hasFocus){
-                  if (v.getId() == cbOrientiert.getId()){
-                      updateDataset("p_orientiert", String.valueOf(cbOrientiert.get));
-                  }
-              }
-          }
-      }
-  */
+           @Override
+           public void onFocusChange(View v, boolean hasFocus) {
+               if (!hasFocus) {
+                   if (v.getId() == cbOrientiert.getId()) {
+                       //updateDataset("p_orientiert", String.valueOf(cbOrientiert.get));
+                   }
+               }
+           }
+       };
+
               public frm_vitaldaten() {
           // Required empty public constructor
       }
@@ -66,6 +66,12 @@ public class frm_vitaldaten extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+    private void updateDataset(String fieldname, String content, String table){
+
+        mActivity.updateDataset(fieldname,content,table);
+
+
     }
 
     @Override
@@ -109,6 +115,7 @@ public class frm_vitaldaten extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        mActivity = (neuerFall) context;
         /*if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
