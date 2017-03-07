@@ -53,6 +53,7 @@ public class frm_stammdaten extends Fragment {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
 
+            //es hat funktioniert 
             if(!hasFocus){
                 //Für Romi: Listener für jede Box setzen
                 //Zuerst Feldname dann Content dann Datenbank
@@ -80,7 +81,7 @@ public class frm_stammdaten extends Fragment {
                 }else if(v.getId()==tbVorgeschehen.getId()){
                     updateDataset("f_vorgeschehen",String.valueOf(tbVorgeschehen.getText()),"f_fall");
                 }else if(v.getId()==tbPatGes.getId()){
-                    updateDataset(("f_patgeschichte",String.valueOf(tbPatGes.getText()),"f_fall");
+                    updateDataset("f_patgeschichte",String.valueOf(tbPatGes.getText()),"f_fall");
                 }
             }
 
