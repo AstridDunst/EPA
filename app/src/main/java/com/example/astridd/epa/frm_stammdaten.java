@@ -36,7 +36,15 @@ public class frm_stammdaten extends Fragment {
     //Step 1:
     private EditText tbVorname;
     private EditText tbNachname;
-    private EditText tbGefahrenzone;
+    private EditText tbTitel;
+    private EditText tbStrasse;
+    private EditText tbPlz;
+    private EditText tbOrt;
+    private EditText tbGebdat;
+    private EditText tbRisikofaktoren;
+    private EditText tbTransportdat;
+    private EditText tbVorgeschehen;
+    private EditText tbPatGes;
 
     private OnFragmentInteractionListener mListener;
 
@@ -45,18 +53,34 @@ public class frm_stammdaten extends Fragment {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
 
-            //Step 4
             if(!hasFocus){
                 //Für Romi: Listener für jede Box setzen
                 //Zuerst Feldname dann Content dann Datenbank
+                //Step 4:
                 if (v.getId() == tbVorname.getId()) {
                     //Erstes Feld Datenbankname
                     //Zweites Feld Content
                     updateDataset("f_vorname",String.valueOf(tbVorname.getText()),"f_fall");
                 }else if (v.getId()==tbNachname.getId()){
                     updateDataset("f_zuname",String.valueOf(tbNachname.getText()),"f_fall");
-                } else  if (v.getId()==tbGefahrenzone.getId()){
-                    updateDataset("p_gefahrenzone",String.valueOf(tbGefahrenzone.getText()),"p_patientenlagebeurteilung");
+                }else if (v.getId()==tbTitel.getId()){
+                    updateDataset("f_titel",String.valueOf(tbTitel.getText()),"f_fall");
+                }else if (v.getId()==tbStrasse.getId()){
+                    updateDataset("f_strasse",String.valueOf(tbTitel.getText()),"f_fall");
+                }else if (v.getId()==tbPlz.getId()){
+                    updateDataset("f_plz",String.valueOf(tbPlz.getText()),"f_fall");
+                }else if (v.getId()==tbOrt.getId()){
+                    updateDataset("f_ort",String.valueOf(tbOrt.getText()),"f_fall");
+                }else if(v.getId()==tbGebdat.getId()){
+                    updateDataset("f_geb",String.valueOf(tbGebdat.getText()),"f_fall");
+                }else if(v.getId()==tbRisikofaktoren.getId()){
+                    updateDataset("f_risikofaktoren",String.valueOf(tbRisikofaktoren.getText()),"f_fall");
+                }else if(v.getId()==tbTransportdat.getId()){
+                    updateDataset("f_transportdat",String.valueOf(tbTransportdat.getText()),"f_fall");
+                }else if(v.getId()==tbVorgeschehen.getId()){
+                    updateDataset("f_vorgeschehen",String.valueOf(tbVorgeschehen.getText()),"f_fall");
+                }else if(v.getId()==tbPatGes.getId()){
+                    updateDataset(("f_patgeschichte",String.valueOf(tbPatGes.getText()),"f_fall");
                 }
             }
 
@@ -65,7 +89,6 @@ public class frm_stammdaten extends Fragment {
     private void updateDataset(String fieldname, String content, String table){
 
         mActivity.updateDataset(fieldname,content,table);
-
 
 
     }
@@ -119,16 +142,32 @@ public class frm_stammdaten extends Fragment {
 
     }
     private void getElements(View view){
-        //Step 2
+        //Step2:
         tbVorname = (EditText)view.findViewById(R.id.tbVorname);
         tbNachname = (EditText)view.findViewById(R.id.tbNachname);
-        tbGefahrenzone = (EditText)view.findViewById(R.id.tbGefahrenzone);
+        tbTitel = (EditText)view.findViewById(R.id.tbTitel);
+        tbStrasse = (EditText)view.findViewById(R.id.tbStrasse);
+        tbPlz = (EditText)view.findViewById(R.id.tbPlz);
+        tbOrt = (EditText)view.findViewById(R.id.tbOrt);
+        tbGebdat =(EditText)view.findViewById(R.id.tbGebdat);
+        tbRisikofaktoren = (EditText)view.findViewById(R.id.tbRisikofaktoren);
+        tbTransportdat = (EditText)view.findViewById(R.id.tbTransportdat);
+        tbVorgeschehen = (EditText)view.findViewById(R.id.tbVorgeschehen);
+        tbPatGes = (EditText)view.findViewById(R.id.tbPatGes);
     }
     private void setListeners(){
-        //Step 3
+        //Step3:
         tbVorname.setOnFocusChangeListener(focusChangeListener);
         tbNachname.setOnFocusChangeListener(focusChangeListener);
-        tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
+        tbTitel.setOnFocusChangeListener(focusChangeListener);
+        tbStrasse.setOnFocusChangeListener(focusChangeListener);
+        tbPlz.setOnFocusChangeListener(focusChangeListener);
+        tbOrt.setOnFocusChangeListener(focusChangeListener);
+        tbGebdat.setOnFocusChangeListener(focusChangeListener);
+        tbRisikofaktoren.setOnFocusChangeListener(focusChangeListener);
+        tbTransportdat.setOnFocusChangeListener(focusChangeListener);
+        tbVorgeschehen.setOnFocusChangeListener(focusChangeListener);
+        tbPatGes.setOnFocusChangeListener(focusChangeListener);
     }
 
 
