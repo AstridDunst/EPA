@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +24,7 @@ public class frm_stammdaten extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private neuerFall mActivity;
     private  String patientennummer;
     final String scriptURLString = "http://epa.htl5.org/phpscripts/update_script.php";
 
@@ -31,8 +33,10 @@ public class frm_stammdaten extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    //Step 1:
     private EditText tbVorname;
     private EditText tbNachname;
+    private EditText tbGefahrenzone;
 
     private OnFragmentInteractionListener mListener;
 
@@ -41,57 +45,26 @@ public class frm_stammdaten extends Fragment {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
 
-
+            //Step 4
             if(!hasFocus){
+                //Für Romi: Listener für jede Box setzen
+                //Zuerst Feldname dann Content dann Datenbank
                 if (v.getId() == tbVorname.getId()) {
                     //Erstes Feld Datenbankname
                     //Zweites Feld Content
-                    updateDataset("f_vorname",String.valueOf(tbNachname.getText()));
+                    updateDataset("f_vorname",String.valueOf(tbVorname.getText()),"f_fall");
                 }else if (v.getId()==tbNachname.getId()){
-                    updateDataset("f_zuname",String.valueOf(tbNachname.getText()));
+                    updateDataset("f_zuname",String.valueOf(tbNachname.getText()),"f_fall");
+                } else  if (v.getId()==tbGefahrenzone.getId()){
+                    updateDataset("p_gefahrenzone",String.valueOf(tbGefahrenzone.getText()),"p_patientenlagebeurteilung");
                 }
             }
 
         }
     };
-    private void updateDataset(String fieldname, String content){
+    private void updateDataset(String fieldname, String content, String table){
 
-        //neuerFall nf = new neuerFall();
-        //Toast.makeText(getActivity(), "bin da", Toast.LENGTH_SHORT).show();
-        //nf.updateDataset(Fieldname,Content);
-
-        //try
-        //{
-            /*String username = "epa";
-            String password = "epateam";
-            String url = "jdbc:mysql://epa.htl5.org:3306/dunst_epa?connectTimeout=3000";
-
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(url, username, password);*/
-
-
-            // create the java mysql update preparedstatement
-            //String query = "update users set num_points = ? where first_name = ?";
-            //String query = "UPDATE f_fall SET " + fieldname +  " = " + content+ " WHERE (f_id ="+ patientennummer+");";
-           // PreparedStatement preparedStmt = conn.prepareStatement(query);
-            //preparedStmt.setInt   (1, 6000);
-            //preparedStmt.setString(2, "Fred");
-            //Toast.makeText(getActivity(), query, Toast.LENGTH_SHORT).show();
-            // execute the java preparedstatement
-            //DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-          //  preparedStmt.executeUpdate();
-
-            //Connection con= DriverManager.getConnection(
-                    //"jdbc:mysql://localhost:3306/","root","root");
-
-            //Toast.makeText(getActivity(), (CharSequence) con.getMetaData(), Toast.LENGTH_SHORT).show();
-        //}
-        //catch (SQLException e)
-        //{
-            //Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
-            //System.err.println("Got an exception! ");
-            //System.err.println(e.getMessage());
-        //}
+        mActivity.updateDataset(fieldname,content,table);
 
 
 
@@ -126,7 +99,9 @@ public class frm_stammdaten extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
+
             patientennummer = getArguments().getString(ARG_PARAM1);
+            Toast.makeText(getActivity(), "Patientennummer im Fragment" + patientennummer, Toast.LENGTH_SHORT).show();
             mParam2 = getArguments().getString(ARG_PARAM2);
 
         }
@@ -144,12 +119,16 @@ public class frm_stammdaten extends Fragment {
 
     }
     private void getElements(View view){
-        tbVorname = (EditText)view.findViewById(R.id.etVorname);
-        tbNachname = (EditText)view.findViewById(R.id.edNachname);
+        //Step 2
+        tbVorname = (EditText)view.findViewById(R.id.tbVorname);
+        tbNachname = (EditText)view.findViewById(R.id.tbNachname);
+        tbGefahrenzone = (EditText)view.findViewById(R.id.tbGefahrenzone);
     }
     private void setListeners(){
+        //Step 3
         tbVorname.setOnFocusChangeListener(focusChangeListener);
         tbNachname.setOnFocusChangeListener(focusChangeListener);
+        tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
     }
 
 
@@ -164,7 +143,7 @@ public class frm_stammdaten extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
+        mActivity = (neuerFall) context;
 
 
         /*if (context instanceof OnFragmentInteractionListener) {

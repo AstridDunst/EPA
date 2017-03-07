@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.Toast;
 
 
 /**
@@ -67,12 +66,9 @@ public class frm_vitaldaten extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_frm_vitaldaten, container, false);
         // Inflate the layout for this fragment
-        Toast.makeText(getActivity(), "Code Teil 2", Toast.LENGTH_SHORT).show();
-        EditText tbVorname = (EditText)view.findViewById(R.id.trol);
-        tbVorname.setText("hahahahaha");
+        //Toast.makeText(getActivity(), "Code Teil 2", Toast.LENGTH_SHORT).show();
         return view;
     }
-
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
