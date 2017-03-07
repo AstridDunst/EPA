@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +24,7 @@ public class frm_stammdaten extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private neuerFall mActivity;
     private  String patientennummer;
     final String scriptURLString = "http://epa.htl5.org/phpscripts/update_script.php";
 
@@ -31,8 +33,18 @@ public class frm_stammdaten extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    //Step 1:
     private EditText tbVorname;
     private EditText tbNachname;
+    private EditText tbTitel;
+    private EditText tbStrasse;
+    private EditText tbPlz;
+    private EditText tbOrt;
+    private EditText tbGebdat;
+    private EditText tbRisikofaktoren;
+    private EditText tbTransportdat;
+    private EditText tbVorgeschehen;
+    private EditText tbPatGes;
 
     private OnFragmentInteractionListener mListener;
 
@@ -41,58 +53,42 @@ public class frm_stammdaten extends Fragment {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
 
-
             if(!hasFocus){
+                //Für Romi: Listener für jede Box setzen
+                //Zuerst Feldname dann Content dann Datenbank
+                //Step 4:
                 if (v.getId() == tbVorname.getId()) {
                     //Erstes Feld Datenbankname
                     //Zweites Feld Content
-                    updateDataset("f_vorname",String.valueOf(tbNachname.getText()));
+                    updateDataset("f_vorname",String.valueOf(tbVorname.getText()),"f_fall");
                 }else if (v.getId()==tbNachname.getId()){
-                    updateDataset("f_zuname",String.valueOf(tbNachname.getText()));
+                    updateDataset("f_zuname",String.valueOf(tbNachname.getText()),"f_fall");
+                }else if (v.getId()==tbTitel.getId()){
+                    updateDataset("f_titel",String.valueOf(tbTitel.getText()),"f_fall");
+                }else if (v.getId()==tbStrasse.getId()){
+                    updateDataset("f_strasse",String.valueOf(tbTitel.getText()),"f_fall");
+                }else if (v.getId()==tbPlz.getId()){
+                    updateDataset("f_plz",String.valueOf(tbPlz.getText()),"f_fall");
+                }else if (v.getId()==tbOrt.getId()){
+                    updateDataset("f_ort",String.valueOf(tbOrt.getText()),"f_fall");
+                }else if(v.getId()==tbGebdat.getId()){
+                    updateDataset("f_geb",String.valueOf(tbGebdat.getText()),"f_fall");
+                }else if(v.getId()==tbRisikofaktoren.getId()){
+                    updateDataset("f_risikofaktoren",String.valueOf(tbRisikofaktoren.getText()),"f_fall");
+                }else if(v.getId()==tbTransportdat.getId()){
+                    updateDataset("f_transportdat",String.valueOf(tbTransportdat.getText()),"f_fall");
+                }else if(v.getId()==tbVorgeschehen.getId()){
+                    updateDataset("f_vorgeschehen",String.valueOf(tbVorgeschehen.getText()),"f_fall");
+                }else if(v.getId()==tbPatGes.getId()){
+                    updateDataset(("f_patgeschichte",String.valueOf(tbPatGes.getText()),"f_fall");
                 }
             }
 
         }
     };
-    private void updateDataset(String fieldname, String content){
+    private void updateDataset(String fieldname, String content, String table){
 
-        //neuerFall nf = new neuerFall();
-        //Toast.makeText(getActivity(), "bin da", Toast.LENGTH_SHORT).show();
-        //nf.updateDataset(Fieldname,Content);
-
-        //try
-        //{
-            /*String username = "epa";
-            String password = "epateam";
-            String url = "jdbc:mysql://epa.htl5.org:3306/dunst_epa?connectTimeout=3000";
-
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(url, username, password);*/
-
-
-            // create the java mysql update preparedstatement
-            //String query = "update users set num_points = ? where first_name = ?";
-            //String query = "UPDATE f_fall SET " + fieldname +  " = " + content+ " WHERE (f_id ="+ patientennummer+");";
-           // PreparedStatement preparedStmt = conn.prepareStatement(query);
-            //preparedStmt.setInt   (1, 6000);
-            //preparedStmt.setString(2, "Fred");
-            //Toast.makeText(getActivity(), query, Toast.LENGTH_SHORT).show();
-            // execute the java preparedstatement
-            //DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-          //  preparedStmt.executeUpdate();
-
-            //Connection con= DriverManager.getConnection(
-                    //"jdbc:mysql://localhost:3306/","root","root");
-
-            //Toast.makeText(getActivity(), (CharSequence) con.getMetaData(), Toast.LENGTH_SHORT).show();
-        //}
-        //catch (SQLException e)
-        //{
-            //Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
-            //System.err.println("Got an exception! ");
-            //System.err.println(e.getMessage());
-        //}
-
+        mActivity.updateDataset(fieldname,content,table);
 
 
     }
@@ -126,7 +122,9 @@ public class frm_stammdaten extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
+
             patientennummer = getArguments().getString(ARG_PARAM1);
+            Toast.makeText(getActivity(), "Patientennummer im Fragment" + patientennummer, Toast.LENGTH_SHORT).show();
             mParam2 = getArguments().getString(ARG_PARAM2);
 
         }
@@ -144,12 +142,32 @@ public class frm_stammdaten extends Fragment {
 
     }
     private void getElements(View view){
-        tbVorname = (EditText)view.findViewById(R.id.etVorname);
-        tbNachname = (EditText)view.findViewById(R.id.edNachname);
+        //Step2:
+        tbVorname = (EditText)view.findViewById(R.id.tbVorname);
+        tbNachname = (EditText)view.findViewById(R.id.tbNachname);
+        tbTitel = (EditText)view.findViewById(R.id.tbTitel);
+        tbStrasse = (EditText)view.findViewById(R.id.tbStrasse);
+        tbPlz = (EditText)view.findViewById(R.id.tbPlz);
+        tbOrt = (EditText)view.findViewById(R.id.tbOrt);
+        tbGebdat =(EditText)view.findViewById(R.id.tbGebdat);
+        tbRisikofaktoren = (EditText)view.findViewById(R.id.tbRisikofaktoren);
+        tbTransportdat = (EditText)view.findViewById(R.id.tbTransportdat);
+        tbVorgeschehen = (EditText)view.findViewById(R.id.tbVorgeschehen);
+        tbPatGes = (EditText)view.findViewById(R.id.tbPatGes);
     }
     private void setListeners(){
+        //Step3:
         tbVorname.setOnFocusChangeListener(focusChangeListener);
         tbNachname.setOnFocusChangeListener(focusChangeListener);
+        tbTitel.setOnFocusChangeListener(focusChangeListener);
+        tbStrasse.setOnFocusChangeListener(focusChangeListener);
+        tbPlz.setOnFocusChangeListener(focusChangeListener);
+        tbOrt.setOnFocusChangeListener(focusChangeListener);
+        tbGebdat.setOnFocusChangeListener(focusChangeListener);
+        tbRisikofaktoren.setOnFocusChangeListener(focusChangeListener);
+        tbTransportdat.setOnFocusChangeListener(focusChangeListener);
+        tbVorgeschehen.setOnFocusChangeListener(focusChangeListener);
+        tbPatGes.setOnFocusChangeListener(focusChangeListener);
     }
 
 
@@ -164,7 +182,7 @@ public class frm_stammdaten extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
+        mActivity = (neuerFall) context;
 
 
         /*if (context instanceof OnFragmentInteractionListener) {

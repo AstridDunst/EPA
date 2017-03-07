@@ -34,7 +34,7 @@ import java.net.URLEncoder;
 
 public class neuerFall extends AppCompatActivity {
 
-    //Hallo Romana
+    //Hallo Romi
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -47,11 +47,11 @@ public class neuerFall extends AppCompatActivity {
     private SharedPreferences speicher;
     private SharedPreferences.Editor editor;
     final String scriptURLString = "http://epa.htl5.org/phpscripts/receive_skript.php";
-    //final String scriptupdate = "http://epa.htl5.org/phpscripts/update_script.php";
+    final String scriptupdate = "http://epa.htl5.org/phpscripts/update_script.php";
     final String abscriptURLString = "http://epa.htl5.org/phpscripts/logout_skript.php";
     private int id_number;
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
+    public boolean IsReady = false;
     private EditText tbVorname;
     private EditText tbNachname;
 
@@ -59,7 +59,7 @@ public class neuerFall extends AppCompatActivity {
 
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
-            Toast.makeText(getApplicationContext(), "Something happend", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Something happend", Toast.LENGTH_SHORT).show();
             if(!hasFocus){
                 Toast.makeText(getApplicationContext(), "Focus lost", Toast.LENGTH_SHORT).show();
             }
@@ -70,6 +70,12 @@ public class neuerFall extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+    @Override
+    protected void onDestroy(){
+        vomServerabmelden();
+        super.onDestroy();
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,8 +120,8 @@ public class neuerFall extends AppCompatActivity {
 
     private void findElements(){
         //TODO: Initialise Compoments
-        tbVorname = (EditText) findViewById(R.id.etVorname);
-        tbNachname = (EditText) findViewById(R.id.edNachname);
+        tbVorname = (EditText) findViewById(R.id.tbVorname);
+        tbNachname = (EditText) findViewById(R.id.tbNachname);
 
     }
     private void setAllListeners(){
@@ -196,6 +202,8 @@ public class neuerFall extends AppCompatActivity {
                 }
             }
         }).start();
+
+
     }
     public String getInputStream(InputStream is){
         BufferedReader reader =  new BufferedReader(new InputStreamReader(is));
@@ -235,9 +243,10 @@ public class neuerFall extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void updateDataset(final String fieldname, final String content){
+    public void updateDataset(final String fieldname, final String content, final String table){
+       // Toast.makeText(getApplicationContext(), fieldname + " auf " + id_number + " Content: "+ content, Toast.LENGTH_SHORT).show();
         //Toast.makeText(getActivity(), patientennummer, Toast.LENGTH_SHORT).show();
-        /*new Thread(new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -247,7 +256,7 @@ public class neuerFall extends AppCompatActivity {
                     String s = fieldname;
                     String st = content;
                     //String textparam = "text1=" + URLEncoder.encode(s,"UTF-8");
-                    String textparam = "dbfeld=" + URLEncoder.encode(s,"UTF-8")+ "&content="+URLEncoder.encode(st, "UTF-8")+"&nummer="+URLEncoder.encode(String.valueOf(id_number), "UTF-8");
+                    String textparam = "dbfeld=" + URLEncoder.encode(s,"UTF-8")+ "&content="+URLEncoder.encode(st, "UTF-8")+"&nummer="+URLEncoder.encode(String.valueOf(id_number), "UTF-8")+ "&table="+URLEncoder.encode(table,"UTF-8");
                     URL scripturl = new URL(scriptupdate);
                     HttpURLConnection connection = (HttpURLConnection)scripturl.openConnection();
                     connection.setDoOutput(true);
@@ -265,9 +274,9 @@ public class neuerFall extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            if (!answer.equals("0")) {
-                                id_number = Integer.valueOf(answer);
-                                Toast.makeText(getApplicationContext(), answer, Toast.LENGTH_SHORT).show();
+                            if (answer.equals("true")) {
+                                //id_number = Integer.valueOf(answer);
+                                Toast.makeText(getApplicationContext(),"Update erfolgreich ", Toast.LENGTH_SHORT).show();
                                 //tv.setText(answer);
                             }else {
                                 Toast.makeText(getApplicationContext(), "Probleme mit der Datenbank.", Toast.LENGTH_SHORT).show();
@@ -283,9 +292,8 @@ public class neuerFall extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-            //Looper.loop();
+
         }).start();
-        */
 
     }
 
@@ -295,7 +303,6 @@ public class neuerFall extends AppCompatActivity {
             public void run() {
                 try {
                     String s = String.valueOf(id_number);
-                    //String textparam = "text1=" + URLEncoder.encode(s,"UTF-8");
                     String textparam = "nummer=" + URLEncoder.encode(s,"UTF-8");
                     URL scripturl = new URL(abscriptURLString);
                     HttpURLConnection connection = (HttpURLConnection)scripturl.openConnection();
@@ -314,7 +321,7 @@ public class neuerFall extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(getApplicationContext(), answer, Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), answer, Toast.LENGTH_SHORT).show();
                             if (answer.equals("true")) {
                                 //id_number = Integer.valueOf(answer);
                                 tre();
@@ -371,6 +378,7 @@ public class neuerFall extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+
                 if (getArguments().getInt(ARG_SECTION_NUMBER)==2){
                     View rootView = inflater.inflate(R.layout.fragment_frm_vitaldaten,container,false);
                     //View rootView = frm_stammdaten.;
@@ -408,11 +416,14 @@ public class neuerFall extends AppCompatActivity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
             //return PlaceholderFragment.newInstance(position + 1);
-            //
-            // Toast.makeText(getApplicationContext(), "Position Nummer: "+position, Toast.LENGTH_SHORT).show();
+
             if (position == 0) {
-                //System.out.println("Position: 0");
+
+                //Toast.makeText(getApplicationContext(), "übergebene " + id_number, Toast.LENGTH_LONG).show();
                 return frm_stammdaten.newInstance(String.valueOf(id_number), "Param2");
+
+
+
             } else if (position == 1) {
                 //System.out.println("Position: 1");
                 return frm_vitaldaten.newInstance("Param1","Param2");

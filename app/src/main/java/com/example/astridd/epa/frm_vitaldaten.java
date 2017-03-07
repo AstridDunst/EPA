@@ -3,12 +3,13 @@ package com.example.astridd.epa;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.StringDef;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
 
 
 /**
@@ -29,20 +30,34 @@ public class frm_vitaldaten extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private CheckBox cbOrientiert;
+
     private OnFragmentInteractionListener mListener;
 
-    public frm_vitaldaten() {
-        // Required empty public constructor
-    }
+    /*   private View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener(){
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment frm_vitaldaten.
-     */
+         @Override
+          public void onFocusChange(View v, boolean hasFocus) {
+              if (!hasFocus){
+                  if (v.getId() == cbOrientiert.getId()){
+                      updateDataset("p_orientiert", String.valueOf(cbOrientiert.get));
+                  }
+              }
+          }
+      }
+  */
+              public frm_vitaldaten() {
+          // Required empty public constructor
+      }
+
+      /**
+       * Use this factory method to create a new instance of
+       * this fragment using the provided parameters.
+       *
+       * @param param1 Parameter 1.
+       * @param param2 Parameter 2.
+       * @return A new instance of fragment frm_vitaldaten.
+       */
     // TODO: Rename and change types and number of parameters
     public static frm_vitaldaten newInstance(String param1, String param2) {
         frm_vitaldaten fragment = new frm_vitaldaten();
@@ -66,12 +81,24 @@ public class frm_vitaldaten extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_frm_vitaldaten, container, false);
+        getElements(view);
+        setListeners();
         // Inflate the layout for this fragment
-        Toast.makeText(getActivity(), "Code Teil 2", Toast.LENGTH_SHORT).show();
-        EditText tbVorname = (EditText)view.findViewById(R.id.trol);
-        tbVorname.setText("hahahahaha");
+        //Toast.makeText(getActivity(), "Code Teil 2", Toast.LENGTH_SHORT).show();
         return view;
     }
+
+    private void getElements(View view) {
+        //Step2:
+        cbOrientiert = (CheckBox)view.findViewById(R.id.cbOrientiert);
+
+    }
+
+    private void setListeners() {
+        //Step3:
+        cbOrientiert.setOnFocusChangeListener(focusChangeListener);
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
