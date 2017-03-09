@@ -53,7 +53,7 @@ public class frm_stammdaten extends Fragment {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
 
-            //es hat funktioniert 
+            //es hat funktioniert
             if(!hasFocus){
                 //Für Romi: Listener für jede Box setzen
                 //Zuerst Feldname dann Content dann Datenbank
