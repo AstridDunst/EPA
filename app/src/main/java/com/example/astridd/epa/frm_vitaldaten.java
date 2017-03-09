@@ -40,7 +40,7 @@ public class frm_vitaldaten extends Fragment {
            public void onFocusChange(View v, boolean hasFocus) {
                if (!hasFocus) {
                    if (v.getId() == cbOrientiert.getId()) {
-                       //updateDataset("p_orientiert", String.valueOf(cbOrientiert.get));
+                       /*updateDataset("p_orientiert", String.valueOf(cbOrientiert.get));*/
                    }
                }
            }
