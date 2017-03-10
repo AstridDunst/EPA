@@ -27,12 +27,26 @@ public class fmassnahme3 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private neuerFall mActivity;
     private OnFragmentInteractionListener mListener;
 
     public fmassnahme3() {
         // Required empty public constructor
     }
+    private View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener() {
+
+        @Override
+        public void onFocusChange(View v, boolean hasFocus) {
+            if (!hasFocus) {
+                //TODO: Beipspiel ersetzen mit eigentlichen Feldern
+                /*if (v.getId() == cbOrientiert.getId()) {
+                       /*updateDataset("p_orientiert", String.valueOf(cbOrientiert.get));
+                }
+                */
+
+            }
+        }
+    };
 
     /**
      * Use this factory method to create a new instance of
@@ -80,6 +94,7 @@ public class fmassnahme3 extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        mActivity = (neuerFall) context;
         /*if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
@@ -89,7 +104,12 @@ public class fmassnahme3 extends Fragment {
         */
 
     }
+    private void updateDataset(String fieldname, String content, String table){
 
+        mActivity.updateDataset(fieldname,content,table);
+
+
+    }
     @Override
     public void onDetach() {
         super.onDetach();
