@@ -32,7 +32,7 @@
                         android:text="Helmabnahme"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textView5e"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -97,7 +97,7 @@
                         android:text="Güdeltubus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textView5plo"
                         android:layout_weight="0.29"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -119,7 +119,7 @@
                         android:text="Larynixtubus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/qwertextView5"
                         android:layout_weight="0.26"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -141,7 +141,7 @@
                         android:text="Beatmung"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/beatmung"
                         android:layout_weight="0.31"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -163,7 +163,7 @@
                         android:text="Rückatmung"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/a"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -185,7 +185,7 @@
                         android:text="Sauerstoffgabe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textctcView5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -209,7 +209,7 @@
                         android:text="Heimlichmanöver"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textccView5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -233,7 +233,7 @@
                         android:text="EKG"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/texctView5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -257,7 +257,7 @@
                         android:text="Infusion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textccViewss5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -281,7 +281,7 @@
                         android:text="Herzdruckmassage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textVicew5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -305,7 +305,7 @@
                         android:text="Defi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textViccew5"
                         android:layout_weight="0.40"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -327,7 +327,7 @@
                         android:text="Defianzahl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textcView5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -351,7 +351,7 @@
                         android:text="Blutstillung"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textccccccView5"
                         android:layout_weight="0.27"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -373,7 +373,7 @@
                         android:text="Kreislauf sonstige"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/tedfsxtView5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -397,7 +397,7 @@
                         android:text="Rautegriff"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textVisdsew5"
                         android:layout_weight="0.31"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -419,7 +419,7 @@
                         android:text="Rettungstuch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/tsdextView5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -441,7 +441,7 @@
                         android:text="Schaufeltrage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/texdddtView5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -463,7 +463,7 @@
                         android:text="Spineboad"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textsdfeView5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -485,7 +485,7 @@
                         android:text="HWS Schienung"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/texdsdsdtView5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -507,7 +507,7 @@
                         android:text="Extremitätenschienung"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textwwwwView5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -529,7 +529,7 @@
                         android:text="Vakuummatraze"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textkView5"
                         android:layout_weight="0.17"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -551,7 +551,7 @@
                         android:text="Rettungskorsett"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textVsssssiew5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -573,7 +573,7 @@
                         android:text="Arzt anwesend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/textVssssssssssiew5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />
@@ -595,7 +595,7 @@
                         android:text="Amputation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/texssqqtView5"
                         android:layout_weight="0.21"
                         android:textSize="24sp"
                         android:textColor="@android:color/black" />

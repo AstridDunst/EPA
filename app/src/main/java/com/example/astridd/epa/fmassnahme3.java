@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 
 /**
@@ -39,18 +40,23 @@ public class fmassnahme3 extends Fragment {
 
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
+
+        
             if (!hasFocus) {
+                Toast.makeText(getActivity(), "CBBeatmung", Toast.LENGTH_SHORT).show();
                 //TODO: Beipspiel ersetzen mit eigentlichen Feldern
                 if (v.getId() == cbBeatmung.getId()) {
+
+
                     if (cbBeatmung.isChecked()) {
                         updateDataset("m_beatmung", "1", "m_massnahmen");
                     } else {
                         updateDataset("m_beatmung", "0", "m_massnahmen");
                     }
-
+                }
                  }
 
-            }
+
         }
     };
 
