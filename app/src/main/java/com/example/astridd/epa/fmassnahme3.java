@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 
@@ -30,6 +31,8 @@ public class fmassnahme3 extends Fragment {
     private neuerFall mActivity;
     private OnFragmentInteractionListener mListener;
 
+    private CheckBox cbBeatmung;
+
     public fmassnahme3() {
         // Required empty public constructor
     }
@@ -39,10 +42,14 @@ public class fmassnahme3 extends Fragment {
         public void onFocusChange(View v, boolean hasFocus) {
             if (!hasFocus) {
                 //TODO: Beipspiel ersetzen mit eigentlichen Feldern
-                /*if (v.getId() == cbOrientiert.getId()) {
-                       /*updateDataset("p_orientiert", String.valueOf(cbOrientiert.get));
-                }
-                */
+                if (v.getId() == cbBeatmung.getId()) {
+                    if (cbBeatmung.isChecked()) {
+                        updateDataset("m_beatmung", "1", "m_massnahmen");
+                    } else {
+                        updateDataset("m_beatmung", "0", "m_massnahmen");
+                    }
+
+                 }
 
             }
         }
@@ -65,6 +72,16 @@ public class fmassnahme3 extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+    private void getElements(View view){
+        //Step2:
+        cbBeatmung = (CheckBox) view.findViewById(R.id.cbBeatmung);
+
+    }
+    private void setListeners(){
+        //Step3:
+        cbBeatmung.setOnFocusChangeListener(focusChangeListener);
+
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,7 +98,10 @@ public class fmassnahme3 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         Toast.makeText(getActivity(), "Code Massnahme", Toast.LENGTH_SHORT).show();
-        return inflater.inflate(R.layout.fragment_fmassnahme3, container, false);
+        View view = inflater.inflate(R.layout.fragment_fmassnahme3, container, false);
+        getElements(view);
+        setListeners();
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
