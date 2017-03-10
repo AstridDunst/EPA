@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.Toast;
 
 
 /**
@@ -97,7 +96,7 @@ public class fmassnahme3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Toast.makeText(getActivity(), "Code Massnahme", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), "Code Massnahme", Toast.LENGTH_SHORT).show();
         View view = inflater.inflate(R.layout.fragment_fmassnahme3, container, false);
         getElements(view);
         setListeners();
