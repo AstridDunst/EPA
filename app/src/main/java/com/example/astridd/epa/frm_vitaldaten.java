@@ -32,6 +32,8 @@ public class frm_vitaldaten extends Fragment {
 
     private CheckBox cbOrientiert;
 
+    //waduup astridd
+
     private OnFragmentInteractionListener mListener;
 
        private View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener() {
@@ -39,8 +41,12 @@ public class frm_vitaldaten extends Fragment {
            @Override
            public void onFocusChange(View v, boolean hasFocus) {
                if (!hasFocus) {
-                   if (v.getId() == cbOrientiert.getId()) {
+                   if (v.getId() == tbVorgefundenSonstiges.getId()) {
                        /*updateDataset("p_orientiert", String.valueOf(cbOrientiert.get));*/
+
+                   }
+                   else if (v.getId()==tbVorgefundenSonstiges.getId()){
+
                    }
                }
            }
