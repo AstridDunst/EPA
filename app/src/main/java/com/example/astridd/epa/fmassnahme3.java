@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 
@@ -36,17 +37,18 @@ public class fmassnahme3 extends Fragment {
     public fmassnahme3() {
         // Required empty public constructor
     }
+
     private View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener() {
 
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
 
-        
+            Toast.makeText(getActivity(), "CBBeatmung", Toast.LENGTH_SHORT).show();
             if (!hasFocus) {
-                Toast.makeText(getActivity(), "CBBeatmung", Toast.LENGTH_SHORT).show();
-                //TODO: Beipspiel ersetzen mit eigentlichen Feldern
-                if (v.getId() == cbBeatmung.getId()) {
 
+                //TODO: TEXTFELDER KEINE CHECKBOXEN
+                if (v.getId() == cbBeatmung.getId()) {
+                    //checkcomment
 
                     if (cbBeatmung.isChecked()) {
                         updateDataset("m_beatmung", "1", "m_massnahmen");
@@ -77,6 +79,27 @@ public class fmassnahme3 extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        switch(buttonView.getId()){
+            case R.id.cbBeatmung:
+                //do stuff
+                if (cbBeatmung.isChecked()) {
+                    updateDataset("m_beatmung", "1", "m_massnahmen");
+                } else {
+                    updateDataset("m_beatmung", "0", "m_massnahmen");
+                }
+                break;
+            //case R.id.marathon_checkbox:
+                //do stuff
+                //break;
+            //case R.id.never_ending_checkbox:
+                //do stuff
+                //break;
+
+        }
+
+    }
     private void getElements(View view){
         //Step2:
         cbBeatmung = (CheckBox) view.findViewById(R.id.cbBeatmung);
@@ -84,7 +107,7 @@ public class fmassnahme3 extends Fragment {
     }
     private void setListeners(){
         //Step3:
-        cbBeatmung.setOnFocusChangeListener(focusChangeListener);
+        //cbBeatmung.setOnCheckedChangeListener(onCheckedChanged);
 
     }
 
