@@ -41,13 +41,14 @@ public class frm_vitaldaten extends Fragment {
            @Override
            public void onFocusChange(View v, boolean hasFocus) {
                if (!hasFocus) {
-                   if (v.getId() == tbVorgefundenSonstiges.getId()) {
-                       /*updateDataset("p_orientiert", String.valueOf(cbOrientiert.get));*/
+                 /*  if (v.getId() == tbVorgefundenSonstiges.getId()) {
+                       /*updateDataset("p_orientiert", String.valueOf(cbOrientiert.get));
 
                    }
                    else if (v.getId()==tbVorgefundenSonstiges.getId()){
 
                    }
+               */
                }
            }
        };
