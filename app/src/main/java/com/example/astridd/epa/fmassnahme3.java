@@ -34,6 +34,7 @@ public class fmassnahme3 extends Fragment {
 
     private CheckBox cbBeatmung;
 
+
     public fmassnahme3() {
         // Required empty public constructor
     }
