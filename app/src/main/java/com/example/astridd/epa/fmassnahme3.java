@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -33,6 +34,8 @@ public class fmassnahme3 extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     private CheckBox cbBeatmung;
+    private EditText tbVorgefundenSonstiges;
+    private EditText tbGefahrenzone;
 
 
     public fmassnahme3() {
@@ -56,6 +59,12 @@ public class fmassnahme3 extends Fragment {
                     } else {
                         updateDataset("m_beatmung", "0", "m_massnahmen");
                     }
+                    if (v.getId()== tbVorgefundenSonstiges.getId()){
+                        updateDataset("p_vorgefundensonstiges",String.valueOf(tbVorgefundenSonstiges.getText()),"p_patientenlagebeurteilung");
+                    }else if (v.getId()==tbGefahrenzone.getId()){
+                        updateDataset("p_gefahrenzone",String.valueOf(tbGefahrenzone.getId()),"p_patientenladebeurteilung");
+                    }
+
                 }
                  }
 
@@ -104,11 +113,14 @@ public class fmassnahme3 extends Fragment {
     private void getElements(View view){
         //Step2:
         cbBeatmung = (CheckBox) view.findViewById(R.id.cbBeatmung);
-
+        tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
+        tbGefahrenzone = (EditText) view.findViewById(R.id.tbGefahrenzone);
     }
     private void setListeners(){
         //Step3:
         //cbBeatmung.setOnCheckedChangeListener(onCheckedChanged);
+        tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
+        tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
 
     }
 
