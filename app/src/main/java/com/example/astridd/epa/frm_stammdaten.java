@@ -48,6 +48,8 @@ public class frm_stammdaten extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+
+
     private View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener() {
 
         @Override
