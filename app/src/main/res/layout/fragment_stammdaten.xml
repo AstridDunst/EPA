@@ -343,18 +343,19 @@
                         android:layout_weight="1" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/WeiterLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/PatGesLL">
+                    android:orientation="horizontal">
 
                     <Button
-                        android:text="Weiter"
+                        android:id="@+id/bt_weiter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/bt_weiter"
                         android:layout_weight="1"
+                        android:text="Weiter"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
 

@@ -627,7 +627,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.21"
-                        android:text="Amputation"
                         android:textColor="@android:color/black"
                         android:textSize="24sp" />
 
@@ -644,7 +643,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.21"
-                        android:text="Amputation"
                         android:textColor="@android:color/black"
                         android:textSize="24sp" />
 
@@ -675,12 +673,83 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.21"
-                        android:text="Amputation"
                         android:textColor="@android:color/black"
                         android:textSize="24sp" />
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/ArztnameLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/tbArztname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:ems="10"
+                        android:inputType="textMultiLine" />
+
+                    <TextView
+                        android:id="@+id/texssqqtView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/VenenzugangLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/tbVenenzugang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Name" />
+
+                    <TextView
+                        android:id="@+id/texssqqtView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Medikamentenappl.LL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/tbMedApp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:ems="10"
+                        android:inputType="textMultiLine" />
+
+                    <TextView
+                        android:id="@+id/texssqqtView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.21"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
 
 
             </LinearLayout>
