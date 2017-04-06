@@ -38,7 +38,7 @@
                         android:textColor="@android:color/black" />
 
                 </LinearLayout>
-            </LinearLayout>
+
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -965,6 +965,8 @@
                     android:ems="10"
                     android:id="@+id/tbVerdachtsdiagnose"
                     android:layout_weight="0.95" />
+
+                </LinearLayout>
             </LinearLayout>
 
         </ScrollView>
