@@ -146,6 +146,8 @@ public class neuerFall extends AppCompatActivity {
         if (availableInternet()){
             this.setTitle("EPA");
             LoginToServer(speicher.getString("speicher_standort", null),speicher.getString("speicher_nummer", null));
+        } else {
+            Toast.makeText(getApplicationContext(), "Keine Internet Verbindung", Toast.LENGTH_SHORT).show();
         }
     }
     private void getElements(){
@@ -162,6 +164,7 @@ public class neuerFall extends AppCompatActivity {
             @Override
             public void run() {
                 try {
+                    //Toast.makeText(getApplicationContext(), "Login", Toast.LENGTH_SHORT).show();
                     String s = standort;
                     String st = stNummer;
                     //String textparam = "text1=" + URLEncoder.encode(s,"UTF-8");
