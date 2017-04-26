@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.EditText;
 
 
 /**
@@ -31,6 +32,26 @@ public class frm_vitaldaten extends Fragment {
     private neuerFall mActivity;
 
     private CheckBox cbOrientiert;
+    private EditText tbVorgefundenSonstiges;
+    private EditText tbGefahrenzone;
+    private EditText tbPupilleLinks;
+    private EditText tbPupilleRechts;
+    private EditText tbSchmerzbeurteilung;
+    private EditText tbMEAF;
+    private EditText tbMZAF;
+    private EditText tbMESPO;
+    private EditText tbMZSPO;
+    private EditText tbMEHF;
+    private EditText tbMZHF;
+    private EditText tbMERR;
+    private EditText tbMZRR;
+    private EditText tbMEBZ;
+    private EditText tbMZBZ;
+    private EditText tbMEC;
+    private EditText tbMZC;
+    private EditText tbVerdachtsdiagnose;
+
+
 
     //waduup astridd
 
@@ -42,14 +63,47 @@ public class frm_vitaldaten extends Fragment {
            public void onFocusChange(View v, boolean hasFocus) {
                if (!hasFocus) {
                  /*  if (v.getId() == tbVorgefundenSonstiges.getId()) {
-                       /*updateDataset("p_orientiert", String.valueOf(cbOrientiert.get));
+                       updateDataset("p_orientiert", String.valueOf(cbOrientiert.get));
 
-                   }
-                   else if (v.getId()==tbVorgefundenSonstiges.getId()){
-
-                   }
-               */
+                   }*/
                }
+                   if (v.getId()== tbVorgefundenSonstiges.getId()){
+                        updateDataset("p_vorgefundensonstiges",String.valueOf(tbVorgefundenSonstiges.getText()),"p_patientenlagebeurteilung");
+                    }else if (v.getId()==tbGefahrenzone.getId()) {
+                       updateDataset("p_gefahrenzone", String.valueOf(tbGefahrenzone.getText()), "p_patientenladebeurteilung");
+                   }else if(v.getId()==tbPupilleLinks.getId()){
+                       updateDataset("n_pupillelink",String.valueOf(tbPupilleLinks.getText()), "n_neurologie");
+                   }else if(v.getId()==tbPupilleRechts.getId()){
+                       updateDataset("n_pupillerechts",String.valueOf(tbPupilleRechts.getText()),"n_neurologie");
+                   }else if(v.getId()==tbSchmerzbeurteilung.getId()){
+                       updateDataset("n_schmerzbeurteilung",String.valueOf(tbSchmerzbeurteilung.getText()),"n_neurologie");
+                   }else if(v.getId()==tbMEAF.getId()){
+                       updateDataset("f_messungAF1",String.valueOf(tbMEAF.getText()),"f_fall");
+                   }else if(v.getId()==tbMZAF.getId()){
+                       updateDataset("f_messungAF2",String.valueOf(tbMZAF.getText()),"f_fall");
+                   }else if(v.getId()==tbMESPO.getId()){
+                       updateDataset("f_messungSPO1",String.valueOf(tbMESPO.getText()),"f_fall");
+                   }else if(v.getId()==tbMZSPO.getId()){
+                       updateDataset("f_messungSPO2",String.valueOf(tbMZSPO.getText()),"f_fall");
+                   } else if (v.getId() == tbMEHF.getId()) {
+                       updateDataset("f_messungHF1",String.valueOf(tbMEHF.getText()),"f_fall");
+                   } else if (v.getId() == tbMZHF.getId()) {
+                       updateDataset("f_messungHF2",String.valueOf(tbMZHF.getText()),"f_fall");
+                   }else if(v.getId()==tbMERR.getId()){
+                       updateDataset("f_messungRR1",String.valueOf(tbMERR.getText()),"f_fall");
+                   } else if (v.getId() == tbMZRR.getId()) {
+                       updateDataset("f_messungRR2",String.valueOf(tbMZRR.getText()),"f_fall");
+                   } else if (v.getId() == tbMEBZ.getId()) {
+                       updateDataset("f_messungBZ1",String.valueOf(tbMEBZ.getText()),"f_fall");
+                   } else if (v.getId() == tbMZBZ.getId()) {
+                       updateDataset("f_messungBZ2",String.valueOf(tbMZBZ.getText()),"f_fall");
+                   }else if (v.getId() == tbMEC.getId()) {
+                       updateDataset("f_messungC1",String.valueOf(tbMEC.getText()),"f_fall");
+                   }else if (v.getId() == tbMZC.getId()) {
+                       updateDataset("f_messungC2",String.valueOf(tbMZC.getText()),"f_fall");
+                   }else if (v.getId() == tbVerdachtsdiagnose.getId()) {
+                       updateDataset("f_verdachtsdiagnose",String.valueOf(tbVerdachtsdiagnose.getText()),"f_fall");
+                   }
            }
        };
 
@@ -103,12 +157,51 @@ public class frm_vitaldaten extends Fragment {
     private void getElements(View view) {
         //Step2:
         cbOrientiert = (CheckBox)view.findViewById(R.id.cbOrientiert);
-
+        tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
+        tbGefahrenzone = (EditText) view.findViewById(R.id.tbGefahrenzone);
+        tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
+        tbGefahrenzone = (EditText) view.findViewById(R.id.tbGefahrenzone);
+        tbPupilleLinks = (EditText) view.findViewById(R.id.tbPupilleLinks);
+        tbPupilleRechts = (EditText) view.findViewById(R.id.tbPupilleRechts);
+        tbSchmerzbeurteilung = (EditText) view.findViewById(R.id.tbSchmerzbeurteilung);
+        tbMEAF = (EditText) view.findViewById(R.id.tbMEAF);
+        tbMZAF = (EditText)view.findViewById(R.id.tbMZAF);
+        tbMESPO = (EditText)view.findViewById(R.id.tbMESPO);
+        tbMZSPO = (EditText)view.findViewById(R.id.tbMZSPO);
+        tbMEHF = (EditText)view.findViewById(R.id.tbMEHF);
+        tbMZHF = (EditText)view.findViewById(R.id.tbMZHF);
+        tbMERR = (EditText)view.findViewById(R.id.tbMERR);
+        tbMZRR = (EditText)view.findViewById(R.id.tbMZRR);
+        tbMEBZ = (EditText)view.findViewById(R.id.tbMEBZ);
+        tbMZBZ = (EditText)view.findViewById(R.id.tbMZBZ);
+        tbMEC = (EditText)view.findViewById(R.id.tbMEC);
+        tbMZC = (EditText)view.findViewById(R.id.tbMZC);
+        tbVerdachtsdiagnose=(EditText)view.findViewById(R.id.tbVerdachtsdiagnose);
     }
 
     private void setListeners() {
         //Step3:
         cbOrientiert.setOnFocusChangeListener(focusChangeListener);
+        tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
+        tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
+        tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
+        tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
+        tbPupilleLinks.setOnFocusChangeListener(focusChangeListener);
+        tbPupilleRechts.setOnFocusChangeListener(focusChangeListener);
+        tbSchmerzbeurteilung.setOnFocusChangeListener(focusChangeListener);
+        tbMEAF.setOnFocusChangeListener(focusChangeListener);
+        tbMZAF.setOnFocusChangeListener(focusChangeListener);
+        tbMESPO.setOnFocusChangeListener(focusChangeListener);
+        tbMZSPO.setOnFocusChangeListener(focusChangeListener);
+        tbMEHF.setOnFocusChangeListener(focusChangeListener);
+        tbMZHF.setOnFocusChangeListener(focusChangeListener);
+        tbMERR.setOnFocusChangeListener(focusChangeListener);
+        tbMZRR.setOnFocusChangeListener(focusChangeListener);
+        tbMEBZ.setOnFocusChangeListener(focusChangeListener);
+        tbMZBZ.setOnFocusChangeListener(focusChangeListener);
+        tbMEC.setOnFocusChangeListener(focusChangeListener);
+        tbMZC.setOnFocusChangeListener(focusChangeListener);
+        tbVerdachtsdiagnose.setOnFocusChangeListener(focusChangeListener);
     }
 
 
