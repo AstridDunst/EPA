@@ -141,8 +141,8 @@ public class fmassnahme3 extends Fragment {
         //cbBeatmung.setOnCheckedChangeListener(onCheckedChanged);
         //tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
         //tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
-        tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
-        tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
+        //tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
+        //tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
         tbPupilleLinks.setOnFocusChangeListener(focusChangeListener);
         tbPupilleRechts.setOnFocusChangeListener(focusChangeListener);
         tbSchmerzbeurteilung.setOnFocusChangeListener(focusChangeListener);
