@@ -59,11 +59,12 @@ public class fmassnahme3 extends Fragment {
                     } else {
                         updateDataset("m_beatmung", "0", "m_massnahmen");
                     }
-                    if (v.getId()== tbVorgefundenSonstiges.getId()){
+                    /*if (v.getId()== tbVorgefundenSonstiges.getId()){
                         updateDataset("p_vorgefundensonstiges",String.valueOf(tbVorgefundenSonstiges.getText()),"p_patientenlagebeurteilung");
                     }else if (v.getId()==tbGefahrenzone.getId()){
                         updateDataset("p_gefahrenzone",String.valueOf(tbGefahrenzone.getId()),"p_patientenladebeurteilung");
                     }
+                    */
 
                 }
                  }
@@ -113,16 +114,18 @@ public class fmassnahme3 extends Fragment {
     private void getElements(View view){
         //Step2:
         cbBeatmung = (CheckBox) view.findViewById(R.id.cbBeatmung);
-        tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
-        tbGefahrenzone = (EditText) view.findViewById(R.id.tbGefahrenzone);
+        //tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
+        //tbGefahrenzone = (EditText) view.findViewById(R.id.tbGefahrenzone);
     }
     private void setListeners(){
         //Step3:
         //cbBeatmung.setOnCheckedChangeListener(onCheckedChanged);
-        tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
-        tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
+        //tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
+        //tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
 
     }
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
