@@ -123,6 +123,8 @@ public class fmassnahme3 extends Fragment {
     private void getElements(View view){
         //Step2:
         cbBeatmung = (CheckBox) view.findViewById(R.id.cbBeatmung);
+        //tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
+        //tbGefahrenzone = (EditText) view.findViewById(R.id.tbGefahrenzone);
         tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
         tbGefahrenzone = (EditText) view.findViewById(R.id.tbGefahrenzone);
         tbPupilleLinks = (EditText) view.findViewById(R.id.tbPupilleLinks);
@@ -133,6 +135,8 @@ public class fmassnahme3 extends Fragment {
     private void setListeners(){
         //Step3:
         //cbBeatmung.setOnCheckedChangeListener(onCheckedChanged);
+        //tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
+        //tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
         tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
         tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
         tbPupilleLinks.setOnFocusChangeListener(focusChangeListener);
@@ -140,6 +144,8 @@ public class fmassnahme3 extends Fragment {
         tbSchmerzbeurteilung.setOnFocusChangeListener(focusChangeListener);
 
     }
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
