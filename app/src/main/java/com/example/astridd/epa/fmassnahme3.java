@@ -60,14 +60,18 @@ public class fmassnahme3 extends Fragment {
 
                     if (cbBeatmung.isChecked()) {
                         updateDataset("m_beatmung", "1", "m_massnahmen");
-                    } else {
+                    } /*else if {
                         updateDataset("m_beatmung", "0", "m_massnahmen");
                     }
                     if (v.getId()== tbVorgefundenSonstiges.getId()){
                         updateDataset("p_vorgefundensonstiges",String.valueOf(tbVorgefundenSonstiges.getText()),"p_patientenlagebeurteilung");
                     }else if (v.getId()==tbGefahrenzone.getId()){
                         updateDataset("p_gefahrenzone",String.valueOf(tbGefahrenzone.getId()),"p_patientenladebeurteilung");
-                    }else if(v.getId()==tbPupilleLinks.getId()){
+
+                    }
+                    */
+
+                    else if(v.getId()==tbPupilleLinks.getId()){
                         updateDataset("n_pupillelink",String.valueOf(tbPupilleLinks.getId()), "n_neurologie");
                     }else if(v.getId()==tbPupilleRechts.getId()){
                         updateDataset("n_pupillerechts",String.valueOf(tbPupilleRechts.getId()),"n_neurologie");
