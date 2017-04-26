@@ -32,10 +32,14 @@ public class fmassnahme3 extends Fragment {
     private String mParam2;
     private neuerFall mActivity;
     private OnFragmentInteractionListener mListener;
-
+    //Step1:
     private CheckBox cbBeatmung;
     private EditText tbVorgefundenSonstiges;
     private EditText tbGefahrenzone;
+    private EditText tbPupilleLinks;
+    private EditText tbPupilleRechts;
+    private EditText tbSchmerzbeurteilung;
+
 
 
     public fmassnahme3() {
@@ -63,6 +67,12 @@ public class fmassnahme3 extends Fragment {
                         updateDataset("p_vorgefundensonstiges",String.valueOf(tbVorgefundenSonstiges.getText()),"p_patientenlagebeurteilung");
                     }else if (v.getId()==tbGefahrenzone.getId()){
                         updateDataset("p_gefahrenzone",String.valueOf(tbGefahrenzone.getId()),"p_patientenladebeurteilung");
+                    }else if(v.getId()==tbPupilleLinks.getId()){
+                        updateDataset("n_pupillelink",String.valueOf(tbPupilleLinks.getId()), "n_neurologie");
+                    }else if(v.getId()==tbPupilleRechts.getId()){
+                        updateDataset("n_pupillerechts",String.valueOf(tbPupilleRechts.getId()),"n_neurologie");
+                    }else if(v.getId()==tbSchmerzbeurteilung.getId()){
+                        updateDataset("n_schmerzbeurteilung",String.valueOf(tbSchmerzbeurteilung.getId()),"n_neurologie");
                     }
 
                 }
@@ -115,12 +125,19 @@ public class fmassnahme3 extends Fragment {
         cbBeatmung = (CheckBox) view.findViewById(R.id.cbBeatmung);
         tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
         tbGefahrenzone = (EditText) view.findViewById(R.id.tbGefahrenzone);
+        tbPupilleLinks = (EditText) view.findViewById(R.id.tbPupilleLinks);
+        tbPupilleRechts = (EditText) view.findViewById(R.id.tbPupilleRechts);
+        tbSchmerzbeurteilung = (EditText) view.findViewById(R.id.tbSchmerzbeurteilung);
+
     }
     private void setListeners(){
         //Step3:
         //cbBeatmung.setOnCheckedChangeListener(onCheckedChanged);
         tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
         tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
+        tbPupilleLinks.setOnFocusChangeListener(focusChangeListener);
+        tbPupilleRechts.setOnFocusChangeListener(focusChangeListener);
+        tbSchmerzbeurteilung.setOnFocusChangeListener(focusChangeListener);
 
     }
 
