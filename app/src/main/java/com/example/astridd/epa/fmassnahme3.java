@@ -34,7 +34,12 @@ public class fmassnahme3 extends Fragment {
     private OnFragmentInteractionListener mListener;
     //Step1:
     private CheckBox cbBeatmung;
-
+    private EditText tbEkg;
+    private EditText tbInfusion;
+    private EditText tbHerzDruck;
+    private EditText tbKreislaufSonst;
+    private EditText tbAmputationstext;
+    private EditText tbArztname;
 
 
     public fmassnahme3() {
@@ -53,13 +58,26 @@ public class fmassnahme3 extends Fragment {
                 if (v.getId() == cbBeatmung.getId()) {
                     //checkcomment
 
+
                     if (cbBeatmung.isChecked()) {
                         updateDataset("m_beatmung", "1", "m_massnahmen");
                     } /*else if {
                         updateDataset("m_beatmung", "0", "m_massnahmen");
                     }
 */
-
+                    if (v.getId() == tbEkg.getId()) {
+                        updateDataset("m_ekg",String.valueOf(tbEkg.getText()),"m_massnahmen");
+                    }else if(v.getId()==tbInfusion.getId()){
+                        updateDataset("m_infusion",String.valueOf(tbInfusion.getText()),"m_massnahmen");
+                    }else if(v.getId()==tbHerzDruck.getId()){
+                        updateDataset("m_herzdruckmassage",String.valueOf(tbHerzDruck.getText()),"m_massnahmen");
+                    } else if (v.getId() == tbKreislaufSonst.getId()) {
+                        updateDataset("m_ksSonstige",String.valueOf(tbKreislaufSonst.getText()),"m_massnahmen");
+                    } else if (v.getId() == tbAmputationstext.getId()) {
+                        updateDataset("m_amputationext",String.valueOf(tbAmputationstext.getText()),"m_massnahmen");
+                    } else if (v.getId() == tbArztname.getId()) {
+                        updateDataset("m_arztnahme",String.valueOf(tbArztname.getText()),"m_massnahme");
+                    }
                 }
                  }
 
@@ -108,11 +126,23 @@ public class fmassnahme3 extends Fragment {
     private void getElements(View view){
         //Step2:
         cbBeatmung = (CheckBox) view.findViewById(R.id.cbBeatmung);
+        tbEkg = (EditText)view.findViewById(R.id.tbEkg);
+        tbInfusion=(EditText)view.findViewById(R.id.tbInfusion);
+        tbHerzDruck=(EditText)view.findViewById(R.id.tbHerzdruck);
+        tbKreislaufSonst=(EditText)view.findViewById(R.id.tbKreislaufSonst);
+        tbAmputationstext=(EditText)view.findViewById(R.id.tbAmputationstext);
+        tbArztname = (EditText)view.findViewById(R.id.tbArztname);
 
     }
     private void setListeners(){
         //Step3:
         //cbBeatmung.setOnCheckedChangeListener(onCheckedChanged);
+        tbEkg.setOnFocusChangeListener(focusChangeListener);
+        tbInfusion.setOnFocusChangeListener(focusChangeListener);
+        tbHerzDruck.setOnFocusChangeListener(focusChangeListener);
+        tbKreislaufSonst.setOnFocusChangeListener(focusChangeListener);
+        tbAmputationstext.setOnFocusChangeListener(focusChangeListener);
+        tbArztname.setOnFocusChangeListener(focusChangeListener);
 
 
     }
