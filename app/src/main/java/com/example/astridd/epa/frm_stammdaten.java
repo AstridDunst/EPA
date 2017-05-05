@@ -69,7 +69,7 @@ public class frm_stammdaten extends Fragment {
                 }else if (v.getId()==tbTitel.getId()){
                     updateDataset("f_titel",String.valueOf(tbTitel.getText()),"f_fall");
                 }else if (v.getId()==tbStrasse.getId()){
-                    updateDataset("f_strasse",String.valueOf(tbTitel.getText()),"f_fall");
+                    updateDataset("f_strasse",String.valueOf(tbStrasse.getText()),"f_fall");
                 }else if (v.getId()==tbPlz.getId()){
                     updateDataset("f_plz",String.valueOf(tbPlz.getText()),"f_fall");
                 }else if (v.getId()==tbOrt.getId()){
