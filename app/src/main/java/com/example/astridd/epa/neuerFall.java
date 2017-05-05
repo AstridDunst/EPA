@@ -247,6 +247,7 @@ public class neuerFall extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void updateDataset(final String fieldname, final String content, final String table){
+        Toast.makeText(getApplicationContext(), "Update mit " + String.valueOf(id_number) , Toast.LENGTH_SHORT).show();
        // Toast.makeText(getApplicationContext(), fieldname + " auf " + id_number + " Content: "+ content, Toast.LENGTH_SHORT).show();
         //Toast.makeText(getActivity(), patientennummer, Toast.LENGTH_SHORT).show();
         new Thread(new Runnable() {
@@ -429,10 +430,10 @@ public class neuerFall extends AppCompatActivity {
 
             } else if (position == 1) {
                 //System.out.println("Position: 1");
-                return frm_vitaldaten.newInstance("Param1","Param2");
+                return frm_vitaldaten.newInstance(String.valueOf(id_number),"Param2");
             } else if (position == 2){
                 //(System.out.println("Position: 2");
-                return fmassnahme3.newInstance("Param1","Param2");
+                return fmassnahme3.newInstance(String.valueOf(id_number),"Param2");
             } else {
                 //System.out.println("Position: "+ position);
                 return frm_stammdaten.newInstance("Param1", "Param2");

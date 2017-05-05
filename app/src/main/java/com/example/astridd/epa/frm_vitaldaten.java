@@ -30,7 +30,7 @@ public class frm_vitaldaten extends Fragment {
     private String mParam2;
 
     private neuerFall mActivity;
-
+    private  String patientennummer;
     private CheckBox cbOrientiert;
     private EditText tbVorgefundenSonstiges;
     private EditText tbGefahrenzone;
@@ -70,7 +70,7 @@ public class frm_vitaldaten extends Fragment {
                    if (v.getId()== tbVorgefundenSonstiges.getId()){
                         updateDataset("p_vorgefundensonstiges",String.valueOf(tbVorgefundenSonstiges.getText()),"p_patientenlagebeurteilung");
                     }else if (v.getId()==tbGefahrenzone.getId()) {
-                       updateDataset("p_gefahrenzone", String.valueOf(tbGefahrenzone.getText()), "p_patientenladebeurteilung");
+                       updateDataset("p_gefahrenzone", String.valueOf(tbGefahrenzone.getText()), "p_patientenlagebeurteilung");
                    }else if(v.getId()==tbPupilleLinks.getId()){
                        updateDataset("n_pupillelink",String.valueOf(tbPupilleLinks.getText()), "n_neurologie");
                    }else if(v.getId()==tbPupilleRechts.getId()){
@@ -150,6 +150,7 @@ public class frm_vitaldaten extends Fragment {
         View view = inflater.inflate(R.layout.fragment_frm_vitaldaten, container, false);
         getElements(view);
         setListeners();
+
         // Inflate the layout for this fragment
         //Toast.makeText(getActivity(), "Code Teil 2", Toast.LENGTH_SHORT).show();
         return view;
