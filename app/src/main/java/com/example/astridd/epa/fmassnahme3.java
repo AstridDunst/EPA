@@ -37,8 +37,7 @@ public class fmassnahme3 extends Fragment {
     private CheckBox cbAbsaugung;
     private CheckBox cbesmarchhandgriff;
     private CheckBox cbGuedeltubus;
-    private CheckBox cbLarnixtubus;
-    private CheckBox cbBeatumung;
+    private CheckBox cbLarynixtubus;
     private CheckBox cbRueckatmung;
     private CheckBox cbBeatmung;
     private EditText tbEkg;
@@ -146,9 +145,28 @@ public class fmassnahme3 extends Fragment {
     }
     private void getElements(View view){
         //Step2:
-        cbBeatmung = (CheckBox) view.findViewById(R.id.cbBeatmung);
+
         cbHelmabnahme = (CheckBox) view.findViewById(R.id.cbHelmabnahme);
         cbAbsaugung = (CheckBox) view.findViewById(R.id.cbAbsaugung);
+        cbesmarchhandgriff = (CheckBox) view.findViewById(R.id.cbesmarchhandgriff);
+        cbGuedeltubus =(CheckBox) view.findViewById(R.id.cbGuedeltubus);
+        cbLarynixtubus =(CheckBox) view.findViewById(R.id.cbLarynixtubus);
+        cbBeatmung = (CheckBox) view.findViewById(R.id.cbBeatmung);
+        cbRueckatmung =(CheckBox) view.findViewById(R.id.cbRueckatmung);
+        cbDefi=(CheckBox) view.findViewById(R.id.cbDefi);
+        cbBlutstillung =(CheckBox) view.findViewById(R.id.cbBlutstillung);
+        cbRautegriff =(CheckBox) view.findViewById(R.id.cbRauteGriff);
+        cbRettungstuch=(CheckBox) view.findViewById(R.id.cbRettungstuch);
+        cbSchaufeltrage=(CheckBox) view.findViewById(R.id.cbSchaufeltrage);
+        cbSpineboard=(CheckBox) view.findViewById(R.id.cbSpineboard);
+        cbHwsSchienung=(CheckBox) view.findViewById(R.id.cbHwsSchienung);
+        cbExtremitätenschienung=(CheckBox) view.findViewById(R.id.cbExtremitätenschienung);
+        cbVakuummatraze=(CheckBox) view.findViewById(R.id.cbVakuummatraze);
+        cbRettungskorsett=(CheckBox) view.findViewById(R.id.cbRettungskorsett);
+        cbArztanwesend=(CheckBox) view.findViewById(R.id.cbArztanwesend);
+        cbAmputation=(CheckBox) view.findViewById(R.id.cbAmputation);
+        cbAugenspuelung=(CheckBox) view.findViewById(R.id.cbAugenspuelung);
+        cbEntbindung=(CheckBox) view.findViewById(R.id.cbEntbindung);
         tbEkg = (EditText)view.findViewById(R.id.tbEkg);
         tbInfusion=(EditText)view.findViewById(R.id.tbInfusion);
         tbHerzDruck=(EditText)view.findViewById(R.id.tbHerzdruck);
@@ -182,8 +200,266 @@ public class fmassnahme3 extends Fragment {
                 }
             }}
         );
+        cbAbsaugung.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
 
+                if (isChecked == true){
+                    updateDataset("m_absaugung", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_absaugung", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbesmarchhandgriff.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_esmarchhandgriff", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_esmarchhandgriff", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbGuedeltubus.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_guedeltubus", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_guedeltubus", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbLarynixtubus.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_larynxtubus", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_larynxtubus", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbBeatmung.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_beatmung", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_beatmung", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbRueckatmung.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_rueckatmung", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_rueckatmung", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbDefi.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_defi", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_defi", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbBlutstillung.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_blutstilling", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_blutstilling", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbRautegriff.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_rautegriff", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_rautegriff", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbRettungstuch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_rettungstuch", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_rettungstuch", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbSchaufeltrage.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_schaufeltrage", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_schaufeltrage", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbSpineboard.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_spineboad", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_spineboad", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbHwsSchienung.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_hwsschienung", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_hwsschienung", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbExtremitätenschienung.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_extremitaetenschienung", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_extremitaetenschienung", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbVakuummatraze.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_vakuummatraze", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_vakuummatraze", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbRettungskorsett.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_rettungskorsett", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_rettungskorsett", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbArztanwesend.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_arztanswesend", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_arztanswesend", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbAmputation.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_ampuation", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_ampuation", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbAugenspuelung.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_augenspuelung", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_augenspuelung", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
+        cbEntbindung.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_entbindung", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_entbindung", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
     }
 
 
