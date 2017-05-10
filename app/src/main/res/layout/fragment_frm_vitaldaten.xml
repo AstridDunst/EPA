@@ -13,9 +13,13 @@
         android:layout_height="match_parent">
 
         <ScrollView
+            android:id="@+id/ScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/ScrollView">
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -23,950 +27,994 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/PatientenlageLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/PatientenlageLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Patientenlagebeurteilung"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="30sp"
-                        android:textStyle="normal|bold"
                         android:layout_weight="1"
-                        android:textColor="@android:color/black" />
+                        android:text="Patientenlagebeurteilung"
+                        android:textColor="@android:color/black"
+                        android:textSize="30sp"
+                        android:textStyle="normal|bold" />
 
                 </LinearLayout>
-
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/VerdachtsdiagnoseLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/OrientiertLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Orientiert"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Verdachtsdiagnose"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
-                    <CheckBox
+                    <EditText
+                        android:id="@+id/tbVerdachtsdiagnose"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/OrientiertLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Orientiert"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <CheckBox
                         android:id="@+id/cbOrientiert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1.81" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/DesorientiertLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/DesorientiertLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Desorientiert"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Desorientiert"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbDesorientiert"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbDesorientiert"
                         android:layout_weight="2.35" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/ErregungszustandLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/ErregungszustandLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Erregungszustand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Erregungszustand"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbErregungszustand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbErregungszustand"
                         android:layout_weight="4.27" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/OhneBewusstseinLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/OhneBewusstseinLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Ohne Bewusstsein"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Ohne Bewusstsein"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbOhneBewusstsein"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbOhneBewusstsein"
                         android:layout_weight="4.59" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/TodeszeichenLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/TodeszeichenLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Todeszeichen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Todeszeichen"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbTodeszeichen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbTodeszeichen"
                         android:layout_weight="2.58" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/GehendLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/GehendLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Gehend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Gehend"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbGehend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbGehend"
                         android:layout_weight="1.64" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/SitzendLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/SitzendLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Sitzend"
+                        android:id="@+id/textView15"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView15"
                         android:layout_weight="1.52"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Sitzend"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbSitzend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbSitzend"
                         android:layout_weight="2.47" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/LiegendLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/LiegendLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Liegend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Liegend"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbLiegend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbLiegend"
                         android:layout_weight="1.67" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/SonstigesLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/SonstigesLL">
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Sonstiges"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:ems="10"
                         android:id="@+id/tbVorgefundenSonstiges"
-                        android:layout_weight="0.95" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/GefahrenzoneLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/GefahrenzoneLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Gefahrenzone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Gefahrenzone"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:ems="10"
                         android:id="@+id/tbGefahrenzone"
-                        android:layout_weight="1.37" />
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/NeurologieLL">
-
-                    <TextView
-                        android:text="Neurologie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1.37"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/NeurologieLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
                         android:id="@+id/textView12"
-                        android:layout_weight="1"
-                        android:textSize="30sp"
-                        android:textStyle="normal|bold"
-                        android:textColor="@android:color/black" />
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/KrampfgeschehenLL">
-
-                    <TextView
-                        android:text="Krampfgeschehen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Neurologie"
+                        android:textColor="@android:color/black"
+                        android:textSize="30sp"
+                        android:textStyle="normal|bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/KrampfgeschehenLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Krampfgeschehen"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbKrampfgeschehen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbKrampfgeschehen"
                         android:layout_weight="4.47" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/SprachstörungenLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/SprachstörungenLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Sprachstörungen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Sprachstörungen"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbSprachstoerungen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbSprachstoerungen"
                         android:layout_weight="3.76" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/PupilleLinksLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/PupilleLinksLL">
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Pupille Links"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:ems="10"
                         android:id="@+id/tbPupilleLinks"
-                        android:layout_weight="1.15" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.15"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/PupilleRechtsLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/PupilleRechtsLL">
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Pupille Rechts"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:ems="10"
                         android:id="@+id/tbPupilleRechts"
-                        android:layout_weight="1.33" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.33"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/SchmerzbeurteilungLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/SchmerzbeurteilungLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Schmerzbeurteilung"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Schmerzbeurteilung"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:ems="10"
                         android:id="@+id/tbSchmerzbeurteilung"
-                        android:layout_weight="3.69" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3.69"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/KreislaufLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/KreislaufLL">
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Kreislauf"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:textColor="@android:color/black"
                         android:textSize="30sp"
-                        android:textStyle="normal|bold"
-                        android:textColor="@android:color/black" />
+                        android:textStyle="normal|bold" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/starkeBlutungLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/starkeBlutungLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="starke Blutung"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="starke Blutung"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbStarkeBlutung"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbStarkeBlutung"
                         android:layout_weight="1.59" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/ArrythmieLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/ArrythmieLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Arrythmie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Arrythmie"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbArrythmie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbArrythmie"
                         android:layout_weight="1.21" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/SchockzustandLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/SchockzustandLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Schockzustand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Schockzustand"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbSchockzustand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbSchockzustand"
                         android:layout_weight="1.70" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/AtemkreislaufstillstLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/AtemkreislaufstillstLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Atemkreislaufstillstand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:text="Atemkreislaufstillstand"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbAtemkreislaufstillstand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbAtemkreislaufstillstand"
                         android:layout_weight="3.83" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/VerbrennungLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/VerbrennungLL">
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Verbrennung"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="24sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:ems="10"
                         android:id="@+id/cbVerbrennung"
-                        android:layout_weight="1.07" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.07"
+                        android:ems="10"
+                        android:inputType="number" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/ErfrierungLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/ErfrierungLL">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
                         android:text="Erfrierung"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:ems="10"
                         android:id="@+id/cbErfrierung"
-                        android:layout_weight="0.85" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.85"
+                        android:ems="10"
+                        android:inputType="number" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/VeraetzungLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/VeraetzungLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Verätzung"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:text="Verätzung"
                         android:textSize="24sp" />
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:ems="10"
                         android:id="@+id/cbveraetzung"
-                        android:layout_weight="0.86" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.86"
+                        android:ems="10"
+                        android:inputType="number" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/AtemwegeLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/AtemwegeLL">
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Atemweg unauffällig"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:textSize="24sp" />
 
                     <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/cbAtemwegUnauf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/AtembeschwerdenLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/AtembeschwerdenLL">
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Atembeschwerden"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:textSize="24sp" />
 
                     <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/cbAtembeschwerden"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/AtemverwegsverlegungLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/AtemverwegsverlegungLL">
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Atemverwegsverlegung"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:textSize="24sp" />
 
                     <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/cbAtemwegsverlegung"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/AtemgeräuscheLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/AtemgeräuscheLL">
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Atemgeräusche"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:textSize="24sp" />
 
                     <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/cbAtemger"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/AsymBrustkorbLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/AsymBrustkorbLL">
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Asymetrische Brustkorbbewegeung"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbAsybkBwg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbAsybkBwg"
                         android:layout_weight="1" />
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/keineAtmungLL"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/keineAtmungLL">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="keine normale Atmung"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:text="keine normale Atmung"
                         android:textSize="24sp" />
 
                     <CheckBox
+                        android:id="@+id/cbKeineNormAtmung"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/cbKeineNormAtmung"
                         android:layout_weight="1" />
 
                 </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/HyperventilationLL">
 
-                <TextView
-                    android:text="Hyperventilation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp" />
+                <LinearLayout
+                    android:id="@+id/HyperventilationLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/cbHyperventilation"
-                    android:layout_weight="1" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Hyperventilation"
+                        android:textSize="24sp" />
 
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/Messung1AFLL">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:text="Messung 1 AF"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbMEAF"
-                    android:layout_weight="0.95" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/Messung2AFLL">
-
-                <TextView
-                    android:text="Messung 2 AF"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbMZAF"
-                    android:layout_weight="0.95" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/Messung1SpoLL">
-
-                <TextView
-                    android:text="Messung 1 Spo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbMESPO"
-                    android:layout_weight="0.95" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/Messung2SpoLL">
-
-                <TextView
-                    android:text="Messung 2 Spo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbMZSPO"
-                    android:layout_weight="0.95" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/Messung1HFLL">
-
-                <TextView
-                    android:text="Messung 1 HF"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbMEHF"
-                    android:layout_weight="0.95" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/Messung2HFLL">
-
-                <TextView
-                    android:text="Messung 2 HF"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbMZHF"
-                    android:layout_weight="0.95" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/Messung1RRLL">
-
-                <TextView
-                    android:text="Messung 1 RR"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbMERR"
-                    android:layout_weight="0.95" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/Messung2RRLL">
-
-                <TextView
-                    android:text="Messung 2 RR"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbMZRR"
-                    android:layout_weight="0.95" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/Messung1BZLL">
-
-                <TextView
-                    android:text="Messung 1 BZ"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbMEBZ"
-                    android:layout_weight="0.95" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/Messung2BZLL">
-
-                <TextView
-                    android:text="Messung 2 BZ"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbMZBZ"
-                    android:layout_weight="0.95" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/Messung1CelsiusLL">
-
-                <TextView
-                    android:text="Messung 1 Celsius"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbMEC"
-                    android:layout_weight="0.95" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/Messung2CelsiusLL">
-
-                <TextView
-                    android:text="Messung 2 Celsius"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbMZC"
-                    android:layout_weight="0.95" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/VerdachtsdiagnoseLL">
-
-                <TextView
-                    android:text="Verdachtsdiagnose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/tbVerdachtsdiagnose"
-                    android:layout_weight="0.95" />
+                    <CheckBox
+                        android:id="@+id/cbHyperventilation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Messung1AFLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/tbMEAF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Messung 1 AF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Messung2AFLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Messung 2 AF"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/tbMZAF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Messung1SpoLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Messung 1 Spo"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/tbMESPO"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Messung2SpoLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Messung 2 Spo"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/tbMZSPO"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Messung1HFLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Messung 1 HF"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/tbMEHF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Messung2HFLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Messung 2 HF"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/tbMZHF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Messung1RRLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Messung 1 RR"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/tbMERR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Messung2RRLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Messung 2 RR"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/tbMZRR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Messung1BZLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Messung 1 BZ"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/tbMEBZ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Messung2BZLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Messung 2 BZ"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/tbMZBZ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Messung1CelsiusLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Messung 1 Celsius"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/tbMEC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Messung2CelsiusLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Messung 2 Celsius"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/tbMZC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+
             </LinearLayout>
 
         </ScrollView>
