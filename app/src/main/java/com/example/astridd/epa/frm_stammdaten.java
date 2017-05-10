@@ -50,6 +50,9 @@ public class frm_stammdaten extends Fragment {
 
 
 
+
+
+
     private View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener() {
 
         @Override
