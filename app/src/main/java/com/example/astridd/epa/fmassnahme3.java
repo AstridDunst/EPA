@@ -60,6 +60,7 @@ public class fmassnahme3 extends Fragment {
     private CheckBox cbAugenspuelung;
     private CheckBox cbEntbindung;
     private EditText tbArztname;
+    private EditText tbSauerstoffgabe;
 
 
     public fmassnahme3() {
@@ -95,7 +96,8 @@ public class fmassnahme3 extends Fragment {
                         updateDataset("m_ksSonstige",String.valueOf(tbKreislaufSonst.getText()),"m_massnahmen");
                     } else if (v.getId() == tbAmputationstext.getId()) {
                         updateDataset("m_amputationext",String.valueOf(tbAmputationstext.getText()),"m_massnahmen");
-                    } else if (v.getId() == tbArztname.getId()) {
+                    }
+                    else if (v.getId() == tbArztname.getId()) {
                         updateDataset("m_arztnahme",String.valueOf(tbArztname.getText()),"m_massnahme");
                     }
                 }
@@ -173,6 +175,7 @@ public class fmassnahme3 extends Fragment {
         tbKreislaufSonst=(EditText)view.findViewById(R.id.tbKreislaufSonst);
         tbAmputationstext=(EditText)view.findViewById(R.id.tbAmputationstext);
         tbArztname = (EditText)view.findViewById(R.id.tbArztname);
+        tbSauerstoffgabe = (EditText) view.findViewById(R.id.tbSauerstoffgabe);
 
     }
     private void setListeners(){
