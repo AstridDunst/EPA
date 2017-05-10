@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 
 
@@ -200,7 +201,7 @@ public class frm_vitaldaten extends Fragment {
 
     private void setListeners() {
         //Step3:
-        cbOrientiert.setOnFocusChangeListener(focusChangeListener);
+        //cbOrientiert.setOnFocusChangeListener(focusChangeListener);
         tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
         tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
         tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
@@ -221,6 +222,21 @@ public class frm_vitaldaten extends Fragment {
         tbMEC.setOnFocusChangeListener(focusChangeListener);
         tbMZC.setOnFocusChangeListener(focusChangeListener);
         tbVerdachtsdiagnose.setOnFocusChangeListener(focusChangeListener);
+
+        cbOrientiert.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("p_orientiert", String.valueOf(1), "p_patientenlagebeurteilung");
+                }
+                else {
+                    updateDataset("p_orientiert", String.valueOf(0), "p_patientenlagebeurteilung");
+                }
+            }
+        }
+        );
     }
 
 
