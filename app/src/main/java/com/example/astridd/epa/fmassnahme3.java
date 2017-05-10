@@ -33,12 +33,33 @@ public class fmassnahme3 extends Fragment {
     private neuerFall mActivity;
     private OnFragmentInteractionListener mListener;
     //Step1:
+    private CheckBox cbHelmabnahme;
+    private CheckBox cbAbsaugung;
+    private CheckBox cbesmarchhandgriff;
+    private CheckBox cbGuedeltubus;
+    private CheckBox cbLarnixtubus;
+    private CheckBox cbBeatumung;
+    private CheckBox cbRueckatmung;
     private CheckBox cbBeatmung;
     private EditText tbEkg;
     private EditText tbInfusion;
     private EditText tbHerzDruck;
+    private CheckBox cbDefi;
+    private CheckBox cbBlutstillung;
     private EditText tbKreislaufSonst;
+    private CheckBox cbRautegriff;
+    private CheckBox cbRettungstuch;
+    private CheckBox cbSchaufeltrage;
+    private CheckBox cbSpineboard;
+    private CheckBox cbHwsSchienung;
+    private CheckBox cbExtremitätenschienung;
+    private CheckBox cbVakuummatraze;
+    private CheckBox cbRettungskorsett;
+    private CheckBox cbArztanwesend;
+    private CheckBox cbAmputation;
     private EditText tbAmputationstext;
+    private CheckBox cbAugenspuelung;
+    private CheckBox cbEntbindung;
     private EditText tbArztname;
 
 
