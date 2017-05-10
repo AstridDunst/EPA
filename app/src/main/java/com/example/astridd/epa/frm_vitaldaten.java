@@ -56,6 +56,8 @@ public class frm_vitaldaten extends Fragment {
     private CheckBox cbAtemwegsverlegung;
     private CheckBox cbAtemger;
     private CheckBox cbAsybkBwg;
+    private CheckBox cbKeineNormAtmung;
+    private CheckBox cbHyperventilation;
     private EditText tbMEAF;
     private EditText tbMZAF;
     private EditText tbMESPO;
@@ -177,6 +179,8 @@ public class frm_vitaldaten extends Fragment {
     private void getElements(View view) {
         //Step2:
         cbOrientiert = (CheckBox)view.findViewById(R.id.cbOrientiert);
+
+        //Checkboxen
         tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
         tbGefahrenzone = (EditText) view.findViewById(R.id.tbGefahrenzone);
         tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);

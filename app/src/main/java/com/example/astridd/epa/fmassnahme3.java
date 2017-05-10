@@ -147,6 +147,8 @@ public class fmassnahme3 extends Fragment {
     private void getElements(View view){
         //Step2:
         cbBeatmung = (CheckBox) view.findViewById(R.id.cbBeatmung);
+        cbHelmabnahme = (CheckBox) view.findViewById(R.id.cbHelmabnahme);
+        cbAbsaugung = (CheckBox) view.findViewById(R.id.cbAbsaugung);
         tbEkg = (EditText)view.findViewById(R.id.tbEkg);
         tbInfusion=(EditText)view.findViewById(R.id.tbInfusion);
         tbHerzDruck=(EditText)view.findViewById(R.id.tbHerzdruck);
@@ -164,6 +166,22 @@ public class fmassnahme3 extends Fragment {
         tbKreislaufSonst.setOnFocusChangeListener(focusChangeListener);
         tbAmputationstext.setOnFocusChangeListener(focusChangeListener);
         tbArztname.setOnFocusChangeListener(focusChangeListener);
+
+
+        //Checkboxen
+        cbHelmabnahme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("m_helmabnahme", String.valueOf(1), "m_massnahmen");
+                }
+                else {
+                    updateDataset("m_helmabnahme", String.valueOf(0), "m_massnahmen");
+                }
+            }}
+        );
 
 
     }
