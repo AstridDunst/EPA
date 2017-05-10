@@ -71,6 +71,9 @@ public class frm_vitaldaten extends Fragment {
     private EditText tbMEC;
     private EditText tbMZC;
     private EditText tbVerdachtsdiagnose;
+    private EditText cbVerbrennung;
+    private EditText cbErfrierung;
+    private EditText cbveraetzung;
 
 
 
@@ -124,6 +127,12 @@ public class frm_vitaldaten extends Fragment {
                        updateDataset("f_messungC2",String.valueOf(tbMZC.getText()),"f_fall");
                    }else if (v.getId() == tbVerdachtsdiagnose.getId()) {
                        updateDataset("f_verdachtsdiagnose",String.valueOf(tbVerdachtsdiagnose.getText()),"f_fall");
+                   }else if (v.getId() == cbVerbrennung.getId()) {
+                       updateDataset("k_verbrennung",String.valueOf(cbVerbrennung.getText()),"k_kreislauf");
+                   }else if (v.getId() == cbErfrierung.getId()) {
+                       updateDataset("k_erfrierung",String.valueOf(cbErfrierung.getText()),"k_kreislauf");
+                   }else if (v.getId() == cbveraetzung.getId()) {
+                       updateDataset("k_veraetzung",String.valueOf(cbveraetzung.getText()),"k_kreislauf");
                    }
            }
        };
@@ -201,11 +210,18 @@ public class frm_vitaldaten extends Fragment {
         tbMEC = (EditText)view.findViewById(R.id.tbMEC);
         tbMZC = (EditText)view.findViewById(R.id.tbMZC);
         tbVerdachtsdiagnose=(EditText)view.findViewById(R.id.tbVerdachtsdiagnose);
+        cbVerbrennung = (EditText)view.findViewById(R.id.cbVerbrennung);
+        cbErfrierung = (EditText)view.findViewById(R.id.cbErfrierung);
+        cbveraetzung = (EditText)view.findViewById(R.id.cbveraetzung);
+
     }
 
     private void setListeners() {
         //Step3:
         //cbOrientiert.setOnFocusChangeListener(focusChangeListener);
+        cbVerbrennung.setOnFocusChangeListener(focusChangeListener);
+        cbErfrierung.setOnFocusChangeListener(focusChangeListener);
+        cbveraetzung.setOnFocusChangeListener(focusChangeListener);
         tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
         tbGefahrenzone.setOnFocusChangeListener(focusChangeListener);
         tbVorgefundenSonstiges.setOnFocusChangeListener(focusChangeListener);
