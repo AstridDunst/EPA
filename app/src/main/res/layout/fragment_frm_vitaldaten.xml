@@ -748,6 +748,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:text="Messung AF1"
                         android:textColor="@android:color/black"
                         android:textSize="24sp" />
 
@@ -758,7 +759,7 @@
                         android:layout_weight="0.95"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:text="Messung 1 AF" />
+                        />
                 </LinearLayout>
 
                 <LinearLayout
