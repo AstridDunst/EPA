@@ -148,7 +148,7 @@ public class fmassnahme3 extends Fragment {
 
         cbHelmabnahme = (CheckBox) view.findViewById(R.id.cbHelmabnahme);
         cbAbsaugung = (CheckBox) view.findViewById(R.id.cbAbsaugung);
-        cbesmarchhandgriff = (CheckBox) view.findViewById(R.id.cbesmarchhandgriff);
+        cbesmarchhandgriff = (CheckBox) view.findViewById(R.id.cbesmarchhandgridd);
         cbGuedeltubus =(CheckBox) view.findViewById(R.id.cbGuedeltubus);
         cbLarynixtubus =(CheckBox) view.findViewById(R.id.cbLarynixtubus);
         cbBeatmung = (CheckBox) view.findViewById(R.id.cbBeatmung);
@@ -158,14 +158,14 @@ public class fmassnahme3 extends Fragment {
         cbRautegriff =(CheckBox) view.findViewById(R.id.cbRauteGriff);
         cbRettungstuch=(CheckBox) view.findViewById(R.id.cbRettungstuch);
         cbSchaufeltrage=(CheckBox) view.findViewById(R.id.cbSchaufeltrage);
-        cbSpineboard=(CheckBox) view.findViewById(R.id.cbSpineboard);
+        cbSpineboard=(CheckBox) view.findViewById(R.id.cbSpineboad);
         cbHwsSchienung=(CheckBox) view.findViewById(R.id.cbHwsSchienung);
         cbExtremitätenschienung=(CheckBox) view.findViewById(R.id.cbExtremitätenschienung);
         cbVakuummatraze=(CheckBox) view.findViewById(R.id.cbVakuummatraze);
         cbRettungskorsett=(CheckBox) view.findViewById(R.id.cbRettungskorsett);
         cbArztanwesend=(CheckBox) view.findViewById(R.id.cbArztanwesend);
         cbAmputation=(CheckBox) view.findViewById(R.id.cbAmputation);
-        cbAugenspuelung=(CheckBox) view.findViewById(R.id.cbAugenspuelung);
+        cbAugenspuelung=(CheckBox) view.findViewById(R.id.tbAugenspuelung);
         cbEntbindung=(CheckBox) view.findViewById(R.id.cbEntbindung);
         tbEkg = (EditText)view.findViewById(R.id.tbEkg);
         tbInfusion=(EditText)view.findViewById(R.id.tbInfusion);
