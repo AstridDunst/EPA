@@ -78,7 +78,7 @@ public class frm_stammdaten extends Fragment {
                 }else if (v.getId()==tbOrt.getId()){
                     updateDataset("f_ort",String.valueOf(tbOrt.getText()),"f_fall");
                 }else if(v.getId()==tbGebdat.getId()){
-                    updateDataset("f_geb",String.valueOf(tbGebdat.getText()),"f_fall");
+                    updateDataset("f_gebDat",String.valueOf(tbGebdat.getText()),"f_fall");
                 }else if(v.getId()==tbRisikofaktoren.getId()){
                     updateDataset("f_risikofaktoren",String.valueOf(tbRisikofaktoren.getText()),"f_fall");
                 }else if(v.getId()==tbTransportdat.getId()){
