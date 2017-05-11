@@ -31,7 +31,7 @@ public class frm_vitaldaten extends Fragment {
     private String mParam2;
 
     private neuerFall mActivity;
-    private  String patientennummer;
+    private String patientennummer;
     private CheckBox cbOrientiert;
     private CheckBox cbDesorientiert;
     private CheckBox cbErregungszustand;
@@ -189,6 +189,26 @@ public class frm_vitaldaten extends Fragment {
     private void getElements(View view) {
         //Step2:
         cbOrientiert = (CheckBox)view.findViewById(R.id.cbOrientiert);
+        cbDesorientiert=(CheckBox)view.findViewById(R.id.cbDesorientiert);
+        cbErregungszustand  = (CheckBox)view.findViewById(R.id.cbErregungszustand);
+        cbOhneBewusstsein = (CheckBox)view.findViewById(R.id.cbOhneBewusstsein);
+        cbTodeszeichen= (CheckBox)view.findViewById(R.id.cbTodeszeichen);
+        cbGehend = (CheckBox)view.findViewById(R.id.cbGehend);
+        cbSitzend= (CheckBox)view.findViewById(R.id.cbSitzend);
+        cbLiegend= (CheckBox)view.findViewById(R.id.cbLiegend);
+        cbKrampfgeschehen = (CheckBox)view.findViewById(R.id.cbKrampfgeschehen);
+        cbSprachstoerungen = (CheckBox)view.findViewById(R.id.cbSprachstoerungen);
+        cbStarkeBlutung= (CheckBox)view.findViewById(R.id.cbStarkeBlutung);
+        cbArrythmie= (CheckBox)view.findViewById(R.id.cbArrythmie);
+        cbSchockzustand= (CheckBox)view.findViewById(R.id.cbSchockzustand);
+        cbatemkreislaufstillstand= (CheckBox)view.findViewById(R.id.cbatemkreislaufstillstand);
+        cbAtemwegUnauf= (CheckBox)view.findViewById(R.id.cbAtemwegUnauf);
+        cbAtembeschwerden= (CheckBox)view.findViewById(R.id.cbAtembeschwerden);
+        cbAtemwegsverlegung= (CheckBox)view.findViewById(R.id.cbAtemwegsverlegung);
+        cbAtemger= (CheckBox)view.findViewById(R.id.cbAtemger);
+        cbAsybkBwg= (CheckBox)view.findViewById(R.id.cbAsybkBwg);
+        cbKeineNormAtmung= (CheckBox)view.findViewById(R.id.cbKeineNormAtmung);
+        cbHyperventilation= (CheckBox)view.findViewById(R.id.cbHyperventilation);
 
         //Checkboxen
         tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
@@ -260,6 +280,269 @@ public class frm_vitaldaten extends Fragment {
             }
         }
         );
+        cbOrientiert.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("p_desorientiert", String.valueOf(1), "p_patientenlagebeurteilung");
+                }
+                else {
+                    updateDataset("p_desorientiert", String.valueOf(0), "p_patientenlagebeurteilung");
+                }
+            }}
+        );
+        cbErregungszustand.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("p_erregungszustand", String.valueOf(1), "p_patientenlagebeurteilung");
+                }
+                else {
+                    updateDataset("p_erregungszustand", String.valueOf(0), "p_patientenlagebeurteilung");
+                }
+            }}
+        );
+        cbOhneBewusstsein.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("p_ohnebewusstsein", String.valueOf(1), "p_patientenlagebeurteilung");
+                }
+                else {
+                    updateDataset("p_ohnebewusstsein", String.valueOf(0), "p_patientenlagebeurteilung");
+                }
+            }}
+        );
+        cbTodeszeichen.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("p_sicheretodeszeichen", String.valueOf(1), "p_patientenlagebeurteilung");
+                }
+                else {
+                    updateDataset("p_sicheretodeszeichen", String.valueOf(0), "p_patientenlagebeurteilung");
+                }
+            }}
+        );
+        cbGehend.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("p_gehend", String.valueOf(1), "p_patientenlagebeurteilung");
+                }
+                else {
+                    updateDataset("p_gehend", String.valueOf(0), "p_patientenlagebeurteilung");
+                }
+            }}
+        );
+        cbSitzend.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("p_sitzend", String.valueOf(1), "p_patientenlagebeurteilung");
+                }
+                else {
+                    updateDataset("p_sitzend", String.valueOf(0), "p_patientenlagebeurteilung");
+                }
+            }}
+        );
+        cbLiegend.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("p_liegend", String.valueOf(1), "p_patientenlagebeurteilung");
+                }
+                else {
+                    updateDataset("p_liegend", String.valueOf(0), "p_patientenlagebeurteilung");
+                }
+            }}
+        );
+        cbKrampfgeschehen.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("n_krampfgeschehen", String.valueOf(1), "n_neurologie");
+                }
+                else {
+                    updateDataset("n_krampfgeschehen", String.valueOf(0), "n_neurologie");
+                }
+            }}
+        );
+        cbSprachstoerungen.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("n_sprachstoering", String.valueOf(1), "n_neurologie");
+                }
+                else {
+                    updateDataset("n_sprachstoering", String.valueOf(0), "n_neurologie");
+                }
+            }}
+        );
+        cbStarkeBlutung.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("k_starkeblutung", String.valueOf(1), "k_kreislauf");
+                }
+                else {
+                    updateDataset("k_starkeblutung", String.valueOf(0), "k_kreislauf");
+                }
+            }}
+        );
+        cbArrythmie.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("k_arrythmie", String.valueOf(1), "k_kreislauf");
+                }
+                else {
+                    updateDataset("k_arrythmie", String.valueOf(0), "k_kreislauf");
+                }
+            }}
+        );
+        cbSchockzustand.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("k_schockzustand", String.valueOf(1), "k_kreislauf");
+                }
+                else {
+                    updateDataset("k_schockzustand", String.valueOf(0), "k_kreislauf");
+                }
+            }}
+        );
+        cbatemkreislaufstillstand.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("k_schockzustand", String.valueOf(1), "k_kreislauf");
+                }
+                else {
+                    updateDataset("k_schockzustand", String.valueOf(0), "k_kreislauf");
+                }
+            }}
+        );
+        cbAtemwegUnauf.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("a_unaufaelig", String.valueOf(1), "a_atemweg");
+                }
+                else {
+                    updateDataset("a_unaufaelig", String.valueOf(0), "a_atemweg");
+                }
+            }}
+        );
+        cbAtembeschwerden.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("a_atembeschwerden", String.valueOf(1), "a_atemweg");
+                }
+                else {
+                    updateDataset("a_atembeschwerden", String.valueOf(0), "a_atemweg");
+                }
+            }}
+        );
+        cbAtemwegsverlegung.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("a_atemwegsverlegung", String.valueOf(1), "a_atemweg");
+                }
+                else {
+                    updateDataset("a_atemwegsverlegung", String.valueOf(0), "a_atemweg");
+                }
+            }}
+        );
+        cbAtemger.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("a_abnormeAtemgerausche", String.valueOf(1), "a_atemweg");
+                }
+                else {
+                    updateDataset("a_abnormeAtemgerausche", String.valueOf(0), "a_atemweg");
+                }
+            }}
+        );
+        cbAsybkBwg.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("a_asymbkbeweg", String.valueOf(1), "a_atemweg");
+                }
+                else {
+                    updateDataset("a_asymbkbeweg", String.valueOf(0), "a_atemweg");
+                }
+            }}
+        );
+        cbKeineNormAtmung.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("a_keinenormaleAtmung", String.valueOf(1), "a_atemweg");
+                }
+                else {
+                    updateDataset("a_keinenormaleAtmung", String.valueOf(0), "a_atemweg");
+                }
+            }}
+        );
+        cbHyperventilation.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                if (isChecked == true){
+                    updateDataset("a_hyperventilation", String.valueOf(1), "a_atemweg");
+                }
+                else {
+                    updateDataset("a_hyperventilation", String.valueOf(0), "a_atemweg");
+                }
+            }}
+        );
+
+
+
     }
 
 
