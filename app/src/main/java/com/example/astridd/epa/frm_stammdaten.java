@@ -78,7 +78,16 @@ public class frm_stammdaten extends Fragment {
                 }else if (v.getId()==tbOrt.getId()){
                     updateDataset("f_ort",String.valueOf(tbOrt.getText()),"f_fall");
                 }else if(v.getId()==tbGebdat.getId()){
-                    updateDataset("f_gebDat",String.valueOf(tbGebdat.getText()),"f_fall");
+                    //TODO: geburtsdatum formatieren
+                    String eingegebens = String.valueOf(tbGebdat.getText());
+                    String DateInSQLFormat;
+                    if (eingegebens.length() == 10){
+                        //DateInSQLFormat = eingegebens.substring(0,2) + "-" + eingegebens.substring(3,5) + "-"+ eingegebens.substring(6,10) ;
+                        DateInSQLFormat = eingegebens.substring(6,10)+ "-"+  eingegebens.substring(3,5)+  "-" +eingegebens.substring(0,2)  ;
+                        Toast.makeText(getActivity(), DateInSQLFormat, Toast.LENGTH_SHORT).show();
+                        updateDataset("f_gebDat",String.valueOf(tbGebdat.getText()),"f_fall");
+                    }
+
                 }else if(v.getId()==tbRisikofaktoren.getId()){
                     updateDataset("f_risikofaktoren",String.valueOf(tbRisikofaktoren.getText()),"f_fall");
                 }else if(v.getId()==tbTransportdat.getId()){

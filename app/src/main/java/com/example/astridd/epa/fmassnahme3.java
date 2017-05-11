@@ -61,6 +61,7 @@ public class fmassnahme3 extends Fragment {
     private CheckBox cbEntbindung;
     private EditText tbArztname;
     private EditText tbSauerstoffgabe;
+    private EditText tbHeimlich;
 
 
     public fmassnahme3() {
@@ -99,6 +100,10 @@ public class fmassnahme3 extends Fragment {
                     }
                     else if (v.getId() == tbArztname.getId()) {
                         updateDataset("m_arztnahme",String.valueOf(tbArztname.getText()),"m_massnahme");
+                    } else if (v.getId() == tbSauerstoffgabe.getId()) {
+                        updateDataset("m_sauerstoffgabe",String.valueOf(tbSauerstoffgabe.getText()),"m_massnahme");
+                    }else if (v.getId() == tbHeimlich.getId()) {
+                        updateDataset("m_heimlichmanoever",String.valueOf(tbHeimlich.getText()),"k_kreislauf");
                     }
                 }
                  }
@@ -176,6 +181,7 @@ public class fmassnahme3 extends Fragment {
         tbAmputationstext=(EditText)view.findViewById(R.id.tbAmputationstext);
         tbArztname = (EditText)view.findViewById(R.id.tbArztname);
         tbSauerstoffgabe = (EditText) view.findViewById(R.id.tbSauerstoffgabe);
+        tbHeimlich = (EditText) view.findViewById(R.id.tbHeimlich);
 
     }
     private void setListeners(){
@@ -187,7 +193,7 @@ public class fmassnahme3 extends Fragment {
         tbKreislaufSonst.setOnFocusChangeListener(focusChangeListener);
         tbAmputationstext.setOnFocusChangeListener(focusChangeListener);
         tbArztname.setOnFocusChangeListener(focusChangeListener);
-
+        tbHeimlich.setOnFocusChangeListener(focusChangeListener);
 
         //Checkboxen
         cbHelmabnahme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

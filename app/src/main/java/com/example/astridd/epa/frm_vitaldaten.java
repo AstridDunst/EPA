@@ -77,6 +77,7 @@ public class frm_vitaldaten extends Fragment {
 
 
 
+
     //waduup astridd
 
     private OnFragmentInteractionListener mListener;
@@ -192,7 +193,7 @@ public class frm_vitaldaten extends Fragment {
         //Checkboxen
         tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
         tbGefahrenzone = (EditText) view.findViewById(R.id.tbGefahrenzone);
-        tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
+        //tbVorgefundenSonstiges = (EditText) view.findViewById(R.id.tbVorgefundenSonstiges);
         tbGefahrenzone = (EditText) view.findViewById(R.id.tbGefahrenzone);
         tbPupilleLinks = (EditText) view.findViewById(R.id.tbPupilleLinks);
         tbPupilleRechts = (EditText) view.findViewById(R.id.tbPupilleRechts);
@@ -213,6 +214,8 @@ public class frm_vitaldaten extends Fragment {
         cbVerbrennung = (EditText)view.findViewById(R.id.cbVerbrennung);
         cbErfrierung = (EditText)view.findViewById(R.id.cbErfrierung);
         cbveraetzung = (EditText)view.findViewById(R.id.cbveraetzung);
+        //cbveraetzung = (EditText)view.findViewById(R.id.cbveraetzung);
+        //tbHeimlich = (EditText) view.findViewById(R.id.tbHeimlich);
 
     }
 
@@ -242,7 +245,7 @@ public class frm_vitaldaten extends Fragment {
         tbMEC.setOnFocusChangeListener(focusChangeListener);
         tbMZC.setOnFocusChangeListener(focusChangeListener);
         tbVerdachtsdiagnose.setOnFocusChangeListener(focusChangeListener);
-
+        //tbHeimlich.setOnFocusChangeListener(focusChangeListener);
         cbOrientiert.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
